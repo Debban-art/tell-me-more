@@ -1,0 +1,6 @@
+.env
+config/config_api.php
+*.log
+.DS_Store
+.idea/
+.vscode/
