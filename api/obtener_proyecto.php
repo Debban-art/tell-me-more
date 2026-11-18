@@ -1,24 +1,36 @@
+
 <?php
-header('Content-Type: application/json; charset=utf-8');
-require_once __DIR__ . '/../config/conexion.php';
 
-$id_proyecto = filter_input(INPUT_GET, 'id_proyecto', FILTER_VALIDATE_INT);
+require_once "../config/conexion.php";
+require_once "common.php";
 
-if (!$id_proyecto || $id_proyecto <= 0) {
-    echo json_encode(["success" => false, "message" => "ID de proyecto inválido", "data" => null]);
-    exit;
+$id = intval($_GET["id"] ?? 0);
+
+if ($id <= 0) {
+    responderJSON([
+        "success" => false,
+        "message" => "Identificador inválido."
+    ], 400);
 }
 
-$stmt = $conn->prepare("SELECT * FROM proyectos WHERE id_proyecto = ?");
-$stmt->bind_param("i", $id_proyecto);
+$stmt = $conn->prepare(
+    "SELECT * FROM proyectos WHERE id_proyecto = ?"
+);
+
+$stmt->bind_param("i", $id);
 $stmt->execute();
-$result = $stmt->get_result();
 
-if ($row = $result->fetch_assoc()) {
-    echo json_encode(["success" => true, "message" => "Proyecto encontrado", "data" => $row]);
-} else {
-    echo json_encode(["success" => false, "message" => "El proyecto no existe", "data" => null]);
+$resultado = $stmt->get_result();
+$proyecto = $resultado->fetch_assoc();
+
+if (!$proyecto) {
+    responderJSON([
+        "success" => false,
+        "message" => "No se encontró el proyecto."
+    ], 404);
 }
 
-$stmt->close();
-$conn->close();
+responderJSON([
+    "success" => true,
+    "proyecto" => $proyecto
+]);

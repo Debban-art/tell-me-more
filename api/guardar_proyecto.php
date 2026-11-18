@@ -1,38 +1,137 @@
+
 <?php
-header('Content-Type: application/json; charset=utf-8');
-require_once __DIR__ . '/../config/conexion.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(["success" => false, "message" => "Método no permitido", "data" => null]);
-    exit;
+require_once "../config/conexion.php";
+require_once "common.php";
+
+$data = obtenerJSON();
+
+$id = intval($data["id_proyecto"] ?? 0);
+
+$campos = [
+    "nombre_estudiante",
+    "carrera",
+    "titulo",
+    "descripcion",
+    "problematica",
+    "objetivo",
+    "justificacion",
+    "metodologia",
+    "tecnologias",
+    "resultados",
+    "duracion",
+    "preocupacion"
+];
+
+$valores = [];
+
+foreach ($campos as $campo) {
+    $valores[$campo] = trim((string)($data[$campo] ?? ""));
 }
 
-$nombre = trim($_POST['nombre_estudiante'] ?? '');
-$titulo = trim($_POST['titulo_proyecto'] ?? '');
-$descripcion = trim($_POST['descripcion'] ?? '');
-$objetivo = trim($_POST['objetivo'] ?? '');
-$metodologia = trim($_POST['metodologia'] ?? '');
-$tecnologias = trim($_POST['tecnologias'] ?? '');
-$resultados = trim($_POST['resultados'] ?? '');
-
-if (empty($nombre) || empty($titulo) || empty($descripcion) || empty($objetivo)) {
-    echo json_encode(["success" => false, "message" => "Faltan campos obligatorios", "data" => null]);
-    exit;
+if ($valores["titulo"] === "" || $valores["descripcion"] === "") {
+    responderJSON([
+        "success" => false,
+        "message" => "El título y la descripción son obligatorios."
+    ], 422);
 }
 
-$stmt = $conn->prepare("INSERT INTO proyectos (nombre_estudiante, titulo_proyecto, descripcion, objetivo, metodologia, tecnologias, resultados) VALUES (?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("sssssss", $nombre, $titulo, $descripcion, $objetivo, $metodologia, $tecnologias, $resultados);
+$duracion = max(1, min(120, intval($valores["duracion"])));
 
-if ($stmt->execute()) {
-    $id_proyecto = $stmt->insert_id;
-    echo json_encode([
-        "success" => true,
-        "message" => "Proyecto guardado exitosamente",
-        "data" => ["id_proyecto" => $id_proyecto]
-    ]);
+if ($id > 0) {
+
+    $sql = "UPDATE proyectos SET
+        nombre_estudiante=?,
+        carrera=?,
+        titulo=?,
+        descripcion=?,
+        problematica=?,
+        objetivo=?,
+        justificacion=?,
+        metodologia=?,
+        tecnologias=?,
+        resultados=?,
+        duracion=?,
+        preocupacion=?
+        WHERE id_proyecto=?";
+
+    $stmt = $conn->prepare($sql);
+
+    $stmt->bind_param(
+        "ssssssssssisi",
+        $valores["nombre_estudiante"],
+        $valores["carrera"],
+        $valores["titulo"],
+        $valores["descripcion"],
+        $valores["problematica"],
+        $valores["objetivo"],
+        $valores["justificacion"],
+        $valores["metodologia"],
+        $valores["tecnologias"],
+        $valores["resultados"],
+        $duracion,
+        $valores["preocupacion"],
+        $id
+    );
+
+    $stmt->execute();
+
+    if ($stmt->affected_rows < 0) {
+        responderJSON([
+            "success" => false,
+            "message" => "No se pudo actualizar el proyecto."
+        ], 500);
+    }
+
+    $idProyecto = $id;
+
 } else {
-    echo json_encode(["success" => false, "message" => "Error al guardar en base de datos", "data" => null]);
+
+    $sql = "INSERT INTO proyectos (
+        nombre_estudiante,
+        carrera,
+        titulo,
+        descripcion,
+        problematica,
+        objetivo,
+        justificacion,
+        metodologia,
+        tecnologias,
+        resultados,
+        duracion,
+        preocupacion
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+    $stmt = $conn->prepare($sql);
+
+    $stmt->bind_param(
+        "ssssssssssis",
+        $valores["nombre_estudiante"],
+        $valores["carrera"],
+        $valores["titulo"],
+        $valores["descripcion"],
+        $valores["problematica"],
+        $valores["objetivo"],
+        $valores["justificacion"],
+        $valores["metodologia"],
+        $valores["tecnologias"],
+        $valores["resultados"],
+        $duracion,
+        $valores["preocupacion"]
+    );
+
+    if (!$stmt->execute()) {
+        responderJSON([
+            "success" => false,
+            "message" => "No se pudo registrar el proyecto."
+        ], 500);
+    }
+
+    $idProyecto = $conn->insert_id;
 }
 
-$stmt->close();
-$conn->close();
+responderJSON([
+    "success" => true,
+    "id_proyecto" => $idProyecto,
+    "message" => "Proyecto guardado correctamente."
+]);

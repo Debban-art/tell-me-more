@@ -1,51 +1,172 @@
+
 <?php
-header('Content-Type: application/json; charset=utf-8');
-require_once __DIR__ . '/../config/conexion.php';
-require_once __DIR__ . '/../config/config_api.php';
-// Incluir la función consultarOpenAI() definida arriba
 
-$id_proyecto = filter_input(INPUT_GET, 'id_proyecto', FILTER_VALIDATE_INT);
-$perfil_sinodal = trim($_GET['perfil_sinodal'] ?? 'general');
+require_once "../config/conexion.php";
+require_once "common.php";
 
-$perfiles_validos = ['tecnico', 'metodologico', 'critico', 'general'];
-if (!in_array($perfil_sinodal, $perfiles_validos)) $perfil_sinodal = 'general';
+$data = obtenerJSON();
 
-if (!$id_proyecto) {
-    echo json_encode(["success" => false, "message" => "ID de proyecto inválido", "data" => null]);
-    exit;
-}
+$idProyecto = intval($data["id_proyecto"] ?? 0);
+$perfil = trim($data["perfil"] ?? "General");
+$dificultad = trim($data["dificultad"] ?? "Intermedio");
 
-$stmt = $conn->prepare("SELECT * FROM proyectos WHERE id_proyecto = ?");
-$stmt->bind_param("i", $id_proyecto);
-$stmt->execute();
-$proyecto = $stmt->get_result()->fetch_assoc();
-$stmt->close();
-$conn->close();
-
-if (!$proyecto) {
-    echo json_encode(["success" => false, "message" => "Proyecto no encontrado", "data" => null]);
-    exit;
-}
-
-$prompt_sistema = "Eres un sinodal de Speech AI. Genera 3 preguntas de defensa basadas estrictamente en el proyecto. Devuelve un JSON: {\"preguntas\": [\"P1\", \"P2\", \"P3\"]}";
-$prompt_usuario = "Perfil: {$perfil_sinodal}\nProyecto: {$proyecto['titulo_proyecto']}\nDesc: {$proyecto['descripcion']}\nObjetivo: {$proyecto['objetivo']}\nMetodología: {$proyecto['metodologia']}\nTecnologías: {$proyecto['tecnologias']}";
-
-$messages = [
-    ["role" => "system", "content" => $prompt_sistema],
-    ["role" => "user", "content" => $prompt_usuario]
+$perfiles = [
+    "Técnico",
+    "Metodológico",
+    "Crítico",
+    "General"
 ];
 
-$respuesta_ai = consultarOpenAI($messages, true);
-$datos_ai = json_decode($respuesta_ai, true);
-
-if (!$datos_ai || !isset($datos_ai['preguntas'])) {
-    $datos_ai = [
-        "preguntas" => [
-            "¿Cómo garantizaste la viabilidad técnica de las tecnologías descritas?",
-            "¿De qué forma los resultados obtenidos validan directamente el objetivo general?",
-            "¿Cuáles fueron las principales limitaciones metodológicas que enfrentaste?"
-        ]
-    ];
+if ($idProyecto <= 0 || !in_array($perfil, $perfiles, true)) {
+    responderJSON([
+        "success" => false,
+        "message" => "Datos de simulación inválidos."
+    ], 422);
 }
 
-echo json_encode(["success" => true, "message" => "Preguntas generadas", "data" => $datos_ai]);
+$stmt = $conn->prepare(
+    "SELECT * FROM proyectos WHERE id_proyecto = ?"
+);
+
+$stmt->bind_param("i", $idProyecto);
+$stmt->execute();
+
+$proyecto = $stmt->get_result()->fetch_assoc();
+
+if (!$proyecto) {
+    responderJSON([
+        "success" => false,
+        "message" => "No se encontró el proyecto."
+    ], 404);
+}
+
+$contexto = "
+PROYECTO: {$proyecto['titulo']}
+
+CARRERA: {$proyecto['carrera']}
+
+DESCRIPCIÓN:
+{$proyecto['descripcion']}
+
+PROBLEMÁTICA:
+{$proyecto['problematica']}
+
+OBJETIVO:
+{$proyecto['objetivo']}
+
+JUSTIFICACIÓN:
+{$proyecto['justificacion']}
+
+METODOLOGÍA:
+{$proyecto['metodologia']}
+
+TECNOLOGÍAS:
+{$proyecto['tecnologias']}
+
+RESULTADOS:
+{$proyecto['resultados']}
+";
+
+$instruccion = "
+Actúa como un sinodal universitario que realiza
+una defensa de proyecto final.
+
+Debes generar exactamente 5 preguntas.
+
+PERFIL DEL SINODAL: $perfil
+DIFICULTAD: $dificultad
+
+CONTEXTO DEL PROYECTO:
+$contexto
+
+INSTRUCCIONES:
+
+1. Todas las preguntas deben estar relacionadas
+   con el proyecto proporcionado.
+
+2. No inventes características del proyecto.
+
+3. No hagas preguntas genéricas que podrían
+   aplicarse a cualquier proyecto.
+
+4. Formula preguntas que evalúen comprensión,
+   justificación y capacidad de argumentación.
+
+5. Adapta las preguntas al perfil del sinodal.
+
+6. Aumenta progresivamente la dificultad.
+
+7. Si falta información en el proyecto, pregunta
+   sobre esa ausencia sin asumir una respuesta.
+
+RESPONDE EXCLUSIVAMENTE CON JSON:
+
+{
+  \"preguntas\": [
+    {
+      \"pregunta\": \"Texto de la pregunta\",
+      \"objetivo\": \"Qué busca evaluar\",
+      \"tema\": \"Tema evaluado\"
+    }
+  ]
+}
+";
+
+try {
+
+    $resultado = responderGemini($instruccion);
+
+    $preguntas = $resultado["preguntas"] ?? [];
+
+    if (count($preguntas) !== 5) {
+        throw new Exception(
+            "La IA no generó las cinco preguntas solicitadas."
+        );
+    }
+
+    foreach ($preguntas as $pregunta) {
+        if (
+            empty($pregunta["pregunta"]) ||
+            empty($pregunta["objetivo"]) ||
+            empty($pregunta["tema"])
+        ) {
+            throw new Exception("Formato de preguntas incompleto.");
+        }
+    }
+
+    $jsonPreguntas = json_encode(
+        $preguntas,
+        JSON_UNESCAPED_UNICODE
+    );
+
+    $stmt = $conn->prepare(
+        "INSERT INTO simulaciones
+        (id_proyecto, perfil, dificultad, preguntas)
+        VALUES (?, ?, ?, ?)"
+    );
+
+    $stmt->bind_param(
+        "isss",
+        $idProyecto,
+        $perfil,
+        $dificultad,
+        $jsonPreguntas
+    );
+
+    $stmt->execute();
+
+    responderJSON([
+        "success" => true,
+        "id_simulacion" => $conn->insert_id,
+        "preguntas" => $preguntas
+    ]);
+
+} catch (Throwable $e) {
+
+    error_log($e->getMessage());
+
+    responderJSON([
+        "success" => false,
+        "message" => $e->getMessage()
+    ], 500);
+}

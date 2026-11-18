@@ -1,53 +1,229 @@
+
 <?php
-header('Content-Type: application/json; charset=utf-8');
-require_once __DIR__ . '/../config/conexion.php';
-require_once __DIR__ . '/../config/config_api.php';
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    echo json_encode(["success" => false, "message" => "Método no permitido", "data" => null]);
-    exit;
+require_once "../config/conexion.php";
+require_once "common.php";
+
+$data = obtenerJSON();
+
+$idSimulacion = intval($data["id_simulacion"] ?? 0);
+$numero = intval($data["numero_pregunta"] ?? 0);
+$respuesta = trim($data["respuesta"] ?? "");
+
+if (
+    $idSimulacion <= 0 ||
+    $numero < 0 ||
+    strlen($respuesta) < 10 ||
+    strlen($respuesta) > 10000
+) {
+    responderJSON([
+        "success" => false,
+        "message" => "La respuesta o los datos son inválidos."
+    ], 422);
 }
 
-$id_sesion = filter_input(INPUT_POST, 'id_sesion', FILTER_VALIDATE_INT);
-$perfil_sinodal = trim($_POST['perfil_sinodal'] ?? 'general');
-$pregunta = trim($_POST['pregunta'] ?? '');
-$respuesta = trim($_POST['respuesta'] ?? '');
+$stmt = $conn->prepare("
+    SELECT
+        s.id_simulacion,
+        s.perfil,
+        s.dificultad,
+        s.preguntas,
+        p.titulo,
+        p.descripcion,
+        p.problematica,
+        p.objetivo,
+        p.justificacion,
+        p.metodologia,
+        p.tecnologias,
+        p.resultados
+    FROM simulaciones s
+    INNER JOIN proyectos p
+        ON p.id_proyecto = s.id_proyecto
+    WHERE s.id_simulacion = ?
+      AND s.estado = 'en_progreso'
+");
 
-if (empty($pregunta) || empty($respuesta)) {
-    echo json_encode(["success" => false, "message" => "Faltan datos de pregunta o respuesta", "data" => null]);
-    exit;
+$stmt->bind_param("i", $idSimulacion);
+$stmt->execute();
+
+$simulacion = $stmt->get_result()->fetch_assoc();
+
+if (!$simulacion) {
+    responderJSON([
+        "success" => false,
+        "message" => "La simulación no existe o ya terminó."
+    ], 404);
 }
 
-$prompt_sistema = "Evalúa la respuesta de un estudiante en Speech AI bajo criterios: claridad, pertinencia, justificación, fundamentación. Devuelve un JSON estricto:
+$preguntas = json_decode(
+    $simulacion["preguntas"],
+    true
+);
+
+if (!isset($preguntas[$numero])) {
+    responderJSON([
+        "success" => false,
+        "message" => "La pregunta no existe."
+    ], 404);
+}
+
+$pregunta = $preguntas[$numero]["pregunta"];
+
+$contexto = "
+PROYECTO: {$simulacion['titulo']}
+DESCRIPCIÓN: {$simulacion['descripcion']}
+PROBLEMÁTICA: {$simulacion['problematica']}
+OBJETIVO: {$simulacion['objetivo']}
+JUSTIFICACIÓN: {$simulacion['justificacion']}
+METODOLOGÍA: {$simulacion['metodologia']}
+TECNOLOGÍAS: {$simulacion['tecnologias']}
+RESULTADOS: {$simulacion['resultados']}
+";
+
+$instruccion = "
+Actúa como un evaluador universitario.
+
+PERFIL DEL SINODAL:
+{$simulacion['perfil']}
+
+DIFICULTAD:
+{$simulacion['dificultad']}
+
+CONTEXTO DEL PROYECTO:
+$contexto
+
+PREGUNTA REALIZADA:
+$pregunta
+
+RESPUESTA DEL ESTUDIANTE:
+$respuesta
+
+Evalúa la respuesta de forma constructiva.
+
+CRITERIOS:
+
+1. Pertinencia: responde realmente la pregunta.
+2. Claridad: explica las ideas comprensiblemente.
+3. Fundamentación: proporciona razones y evidencias.
+4. Argumentación: justifica las decisiones.
+5. Dominio: demuestra comprensión del proyecto.
+
+IMPORTANTE:
+
+- No inventes información.
+- No supongas que algo es correcto si no está respaldado.
+- Distingue entre una respuesta incompleta y una incorrecta.
+- No castigues al alumno por no utilizar términos técnicos
+  cuando la explicación sea conceptualmente correcta.
+- La puntuación es orientativa, no una calificación oficial.
+
+Devuelve exclusivamente JSON:
+
 {
-  \"calificacion_sugerida\": \"Aceptable / Excelente / Debe mejorar\",
-  \"criterios\": { \"claridad\": \"...\", \"pertinencia\": \"...\", \"justificacion\": \"...\", \"fundamentacion\": \"...\" },
-  \"sugerencia_mejora\": \"...\"
-}";
+  \"puntaje\": 75,
+  \"pertinencia\": 80,
+  \"claridad\": 70,
+  \"fundamentacion\": 60,
+  \"argumentacion\": 75,
+  \"fortalezas\": [
+    \"Fortaleza identificada\"
+  ],
+  \"mejoras\": [
+    \"Aspecto que necesita mejorar\"
+  ],
+  \"respuesta_sugerida\": \"Ejemplo de una respuesta mejor desarrollada\",
+  \"pregunta_seguimiento\": \"Pregunta adicional relacionada con la respuesta\"
+}
+";
 
-$messages = [
-    ["role" => "system", "content" => $prompt_sistema],
-    ["role" => "user", "content" => "Perfil: {$perfil_sinodal}\nPregunta: {$pregunta}\nRespuesta: {$respuesta}"]
-];
+try {
 
-$respuesta_ai = consultarOpenAI($messages, true);
-$evaluacion_data = json_decode($respuesta_ai, true);
+    $evaluacion = responderGemini($instruccion);
 
-if (!$evaluacion_data) {
-    $evaluacion_data = [
-        "calificacion_sugerida" => "Aceptable",
-        "criterios" => ["claridad" => "Buena", "pertinencia" => "Adecuada", "justificacion" => "Falta profundizar", "fundamentacion" => "Respaldo básico"],
-        "sugerencia_mejora" => "Conecta de manera directa tu respuesta con la arquitectura del proyecto."
+    if (
+        !isset($evaluacion["puntaje"]) ||
+        !isset($evaluacion["fortalezas"]) ||
+        !isset($evaluacion["mejoras"]) ||
+        !isset($evaluacion["respuesta_sugerida"]) ||
+        !isset($evaluacion["pregunta_seguimiento"])
+    ) {
+        throw new Exception("Evaluación incompleta.");
+    }
+
+    $evaluacion["puntaje"] = max(
+        0,
+        min(100, intval($evaluacion["puntaje"]))
+    );
+
+    $jsonEvaluacion = json_encode(
+        $evaluacion,
+        JSON_UNESCAPED_UNICODE
+    );
+
+    // Incorporar la pregunta de seguimiento al historial
+$seguimiento = trim(
+    $evaluacion["pregunta_seguimiento"] ?? ""
+);
+
+if ($seguimiento !== "" && count($preguntas) < 10) {
+
+    $preguntas[] = [
+        "pregunta" => $seguimiento,
+        "objetivo" => "Profundizar en la respuesta anterior",
+        "tema" => "Seguimiento"
     ];
+
+    $jsonPreguntas = json_encode(
+        $preguntas,
+        JSON_UNESCAPED_UNICODE
+    );
+
+    $update = $conn->prepare(
+        "UPDATE simulaciones SET preguntas = ?
+         WHERE id_simulacion = ?"
+    );
+
+    $update->bind_param(
+        "si",
+        $jsonPreguntas,
+        $idSimulacion
+    );
+
+    $update->execute();
 }
 
-if ($id_sesion && $id_sesion > 0) {
-    $eval_json = json_encode($evaluacion_data, JSON_UNESCAPED_UNICODE);
-    $stmt = $conn->prepare("INSERT INTO respuestas_simulador (id_sesion, perfil_sinodal, pregunta, respuesta, evaluacion) VALUES (?, ?, ?, ?, ?)");
-    $stmt->bind_param("issss", $id_sesion, $perfil_sinodal, $pregunta, $respuesta, $eval_json);
+    $stmt = $conn->prepare("
+        INSERT INTO respuestas (
+            id_simulacion,
+            numero_pregunta,
+            pregunta,
+            respuesta,
+            evaluacion
+        ) VALUES (?, ?, ?, ?, ?)
+    ");
+
+    $stmt->bind_param(
+        "iisss",
+        $idSimulacion,
+        $numero,
+        $pregunta,
+        $respuesta,
+        $jsonEvaluacion
+    );
+
     $stmt->execute();
-    $stmt->close();
-}
-$conn->close();
 
-echo json_encode(["success" => true, "message" => "Evaluación completada", "data" => $evaluacion_data]);
+    responderJSON([
+        "success" => true,
+        "evaluacion" => $evaluacion
+    ]);
+
+} catch (Throwable $e) {
+
+    error_log($e->getMessage());
+
+    responderJSON([
+        "success" => false,
+        "message" => $e->getMessage()
+    ], 500);
+}
