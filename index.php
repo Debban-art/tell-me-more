@@ -3,10 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tell Me More | Asesor virtual</title>
-<style>
-:root{--bg:#f6f5fb;--panel:#fff;--ink:#24213a;--muted:#77748d;--line:#ebe9f3;--purple:#7057d9;--purple2:#8d79ee;--lav:#f0edff;--green:#18866b;--amber:#b7791f;--red:#c34c65;--shadow:0 12px 34px #33265b0d}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);font:15px/1.5 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,sans-serif;color:var(--ink)}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}.app{display:flex;min-height:100vh}.sidebar{width:245px;background:#211d36;color:#fff;padding:26px 17px;display:flex;flex-direction:column;gap:28px;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:0 9px}.brand-mark{width:38px;height:38px;border-radius:13px;background:linear-gradient(135deg,#a99aff,#7158d8);display:grid;place-items:center;font-size:20px}.brand strong{font-size:18px;letter-spacing:.2px}.brand small{display:block;color:#bcb6d5;font-size:11px}.nav-label{color:#89839f;font-size:10px;text-transform:uppercase;letter-spacing:1.3px;padding:0 12px;margin-bottom:8px}.nav{display:grid;gap:6px}.nav button{color:#c9c4dc;background:transparent;text-align:left;padding:12px;border-radius:11px;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#393252;color:#fff}.nav .ico{width:20px;text-align:center;font-size:17px}.sidebar-note{margin-top:auto;background:#302a49;border:1px solid #443b62;border-radius:15px;padding:15px;color:#d9d4e9;font-size:12px}.sidebar-note b{display:block;color:#fff;margin-bottom:5px}.main{flex:1;min-width:0}.topbar{height:76px;background:#ffffffc9;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;position:sticky;top:0;z-index:3;backdrop-filter:blur(12px)}.crumb{font-size:13px;color:var(--muted)}.user{display:flex;align-items:center;gap:10px;font-size:13px}.avatar{width:34px;height:34px;border-radius:50%;background:#e8e2ff;color:#654dc5;display:grid;place-items:center;font-weight:700}.content{max-width:1180px;margin:0 auto;padding:34px 38px 55px}.page{display:none}.page.active{display:block}.eyebrow{color:var(--purple);font-size:11px;text-transform:uppercase;letter-spacing:1.3px;font-weight:800}.heading{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin:8px 0 25px}.heading h1{font-size:29px;line-height:1.2;margin:0 0 8px;letter-spacing:-.7px}.heading p{margin:0;color:var(--muted);max-width:650px}.btn{padding:11px 16px;border-radius:10px;font-weight:700;font-size:13px;display:inline-flex;align-items:center;gap:8px;justify-content:center}.primary{background:var(--purple);color:#fff;box-shadow:0 5px 12px #7057d92b}.primary:hover{background:#6048c6}.secondary{background:var(--lav);color:#5e49bd}.ghost{background:#fff;border:1px solid var(--line);color:var(--ink)}.danger{background:#fff0f2;color:var(--red)}.grid{display:grid;gap:18px}.cols3{grid-template-columns:repeat(3,1fr)}.cols2{grid-template-columns:1.15fr .85fr}.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:21px;box-shadow:var(--shadow)}.card h3{font-size:15px;margin:0 0 5px}.muted{color:var(--muted)}.small{font-size:12px}.stat{display:flex;justify-content:space-between;align-items:center}.stat-icon{width:39px;height:39px;border-radius:12px;background:var(--lav);display:grid;place-items:center;font-size:18px}.stat strong{font-size:26px;display:block;margin-top:12px}.stat span{font-size:12px;color:var(--muted)}.welcome{background:linear-gradient(115deg,#30264e,#5945a1 65%,#8875df);color:white;border:0;padding:27px;display:flex;align-items:center;justify-content:space-between;gap:20px;overflow:hidden}.welcome h2{font-size:23px;margin:5px 0 8px}.welcome p{color:#ded8f6;margin:0;max-width:560px}.welcome .btn{background:white;color:#5f49bd;margin-top:18px}.welcome-art{font-size:78px;opacity:.9;padding:0 20px}.section-title{display:flex;align-items:center;justify-content:space-between;margin:26px 0 13px}.section-title h2{font-size:17px;margin:0}.feature{display:flex;gap:13px;align-items:flex-start}.feature .stat-icon{flex-shrink:0}.feature p{margin:4px 0 0;color:var(--muted);font-size:12px}.progress{height:7px;background:#efedf5;border-radius:9px;overflow:hidden;margin-top:12px}.progress i{display:block;height:100%;background:var(--purple);border-radius:9px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:12px;font-weight:700;color:#4b4761}.field input,.field textarea,.field select{width:100%;border:1px solid #e5e2ef;border-radius:9px;padding:11px 12px;background:#fff;outline:none;color:var(--ink)}.field textarea{min-height:90px;resize:vertical}.field input:focus,.field textarea:focus,.field select:focus{border-color:#9886eb;box-shadow:0 0 0 3px #8b79e51c}.hint{font-size:11px;color:var(--muted)}.actions{display:flex;justify-content:flex-end;gap:9px;margin-top:18px}.practice-layout{display:grid;grid-template-columns:1.3fr .7fr;gap:18px}.timer-card{text-align:center;padding:28px}.timer{font-size:58px;font-weight:800;letter-spacing:-2px;color:#30264e;font-variant-numeric:tabular-nums;margin:10px 0}.timer-label{font-size:12px;color:var(--muted)}.record-dot{width:9px;height:9px;border-radius:50%;background:#d1cedb;display:inline-block;margin-right:7px}.record-dot.live{background:#e44f69;box-shadow:0 0 0 5px #e44f6920;animation:pulse 1.2s infinite}@keyframes pulse{50%{box-shadow:0 0 0 9px #e44f6908}}.transcript{min-height:190px;background:#faf9fd;border:1px solid var(--line);border-radius:11px;padding:14px;color:#55516b;font-size:13px;white-space:pre-wrap}.metric-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:13px}.metric{background:#faf9fd;border-radius:10px;padding:12px}.metric b{font-size:21px;display:block}.metric span{font-size:11px;color:var(--muted)}.question{font-size:18px;font-weight:700;line-height:1.45;margin:13px 0}.tag{display:inline-flex;padding:5px 9px;border-radius:30px;font-size:10px;font-weight:800;background:#f0edff;color:#6651c4}.feedback-item{padding:13px 0;border-bottom:1px solid var(--line)}.feedback-item:last-child{border:0}.feedback-item b{font-size:13px}.feedback-item p{font-size:12px;color:var(--muted);margin:4px 0 0}.score{font-size:30px;font-weight:800;color:var(--purple)}.question-list{display:grid;gap:10px}.qrow{padding:14px;border:1px solid var(--line);border-radius:11px;display:flex;gap:12px;align-items:flex-start}.qnum{background:var(--lav);color:var(--purple);width:27px;height:27px;border-radius:8px;display:grid;place-items:center;font-weight:800;font-size:12px;flex-shrink:0}.pill{font-size:10px;color:var(--green);background:#eaf7f2;border-radius:20px;padding:4px 8px}.empty{text-align:center;padding:35px 15px;color:var(--muted)}.toast{position:fixed;right:24px;bottom:24px;background:#29233e;color:#fff;padding:12px 17px;border-radius:11px;box-shadow:var(--shadow);display:none;z-index:9;font-size:13px}.footer-note{font-size:11px;color:var(--muted);margin-top:18px}.bar{height:8px;border-radius:10px;background:#efedf5;overflow:hidden}.bar span{display:block;height:100%;border-radius:10px;background:var(--purple)}@media(max-width:900px){.sidebar{width:75px;padding:22px 10px}.brand strong,.brand small,.nav-label,.nav button .navtext,.sidebar-note{display:none}.brand{padding:0 8px}.nav button{justify-content:center}.nav button .ico{font-size:20px}.content{padding:25px 20px}.topbar{padding:0 20px}.cols3{grid-template-columns:1fr 1fr}.practice-layout,.cols2{grid-template-columns:1fr}}@media(max-width:600px){.cols3,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.heading{display:block}.heading .btn{margin-top:15px}.welcome-art{display:none}.content{padding:22px 14px}.topbar{padding:0 14px}.timer{font-size:46px}}
-</style>
+<link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 <div class="app">
@@ -112,25 +109,27 @@
 </section>
 </div></main></div><div class="toast" id="toast"></div>
 <script>
-/* =========================================================
-   Tell Me More - JAVASCRIPT
-   Conserva el HTML y CSS originales.
-   ========================================================= */
 
-/* -------------------------
-   VARIABLES GENERALES
-------------------------- */
+/* ==========================================================
+   TELL ME MORE — DEMO LOCAL PARA GITHUB PAGES
+   Sin PHP, sin MySQL y sin APIs externas.
+   ========================================================== */
 
 const $ = id => document.getElementById(id);
 
-let proyectoId = localStorage.getItem('defensaProyectoId') || null;
-let simulacionId = null;
+/* =========================
+   ESTADO LOCAL
+========================= */
 
 let project = JSON.parse(localStorage.getItem('defensaProject') || '{}');
 
 let stats = JSON.parse(
     localStorage.getItem('defensaStats') ||
     '{"sessions":0,"words":0,"questions":0}'
+);
+
+let currentMetrics = JSON.parse(
+    localStorage.getItem('defensaLast') || 'null'
 );
 
 let recognition = null;
@@ -142,7 +141,319 @@ let startedAt = 0;
 let transcript = '';
 let questions = [];
 let qIndex = 0;
-let currentMetrics = null;
+let currentQuestion = null;
+
+/* =========================
+   UTILIDADES
+========================= */
+
+function toast(message) {
+    const element = $('toast');
+
+    element.textContent = message;
+    element.style.display = 'block';
+
+    clearTimeout(element.toastTimeout);
+
+    element.toastTimeout = setTimeout(() => {
+        element.style.display = 'none';
+    }, 3000);
+}
+
+function escapeHTML(value) {
+    return String(value ?? '').replace(/[&<>"']/g, char => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+    })[char]);
+}
+
+function saveLocalData() {
+    localStorage.setItem('defensaProject', JSON.stringify(project));
+    localStorage.setItem('defensaStats', JSON.stringify(stats));
+
+    if (currentMetrics) {
+        localStorage.setItem('defensaLast', JSON.stringify(currentMetrics));
+    }
+}
+
+/* =========================
+   NAVEGACIÓN
+========================= */
+
+function go(page) {
+    document.querySelectorAll('.page').forEach(element => {
+        element.classList.remove('active');
+    });
+
+    const selectedPage = $('page-' + page);
+
+    if (!selectedPage) return;
+
+    selectedPage.classList.add('active');
+
+    document.querySelectorAll('.nav button').forEach(button => {
+        button.classList.toggle('active', button.dataset.page === page);
+    });
+
+    const pageNames = {
+        inicio: 'Inicio',
+        proyecto: 'Mi proyecto',
+        practica: 'Practicar exposición',
+        simulador: 'Simular sinodales',
+        resultados: 'Mis resultados'
+    };
+
+    $('crumb').textContent = pageNames[page] || 'Inicio';
+
+    if (page === 'resultados') renderStats();
+    if (page === 'inicio') renderHome();
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('.nav button').forEach(button => {
+    button.addEventListener('click', () => go(button.dataset.page));
+});
+
+/* =========================
+   PROYECTO
+========================= */
+
+function saveProject() {
+    project = {
+        nombre_estudiante: $('estudiante').value.trim(),
+        carrera: $('carrera').value.trim(),
+        titulo: $('titulo').value.trim(),
+        descripcion: $('descripcion').value.trim(),
+        problematica: $('problematica').value.trim(),
+        objetivo: $('objetivo').value.trim(),
+        justificacion: $('justificacion').value.trim(),
+        metodologia: $('metodologia').value.trim(),
+        tecnologias: $('tecnologias').value.trim(),
+        resultados: $('resultadosProyecto').value.trim(),
+        duracion: parseInt($('duracion').value, 10),
+        preocupacion: $('preocupacion').value
+    };
+
+    if (!project.titulo || !project.descripcion) {
+        toast('Completa el título y la descripción de tu proyecto.');
+        return;
+    }
+
+    saveLocalData();
+
+    renderHome();
+
+    toast('Proyecto guardado en este navegador.');
+
+    go('inicio');
+}
+
+function loadProject() {
+    if (!project || Object.keys(project).length === 0) return;
+
+    $('estudiante').value = project.nombre_estudiante || '';
+    $('carrera').value = project.carrera || '';
+    $('titulo').value = project.titulo || '';
+    $('descripcion').value = project.descripcion || '';
+    $('problematica').value = project.problematica || '';
+    $('objetivo').value = project.objetivo || '';
+    $('justificacion').value = project.justificacion || '';
+    $('metodologia').value = project.metodologia || '';
+    $('tecnologias').value = project.tecnologias || '';
+    $('resultadosProyecto').value = project.resultados || '';
+    $('duracion').value = project.duracion || 5;
+    $('preocupacion').value = project.preocupacion || 'Quedarme en blanco';
+
+    renderHome();
+}
+
+function renderHome() {
+    $('statSessions').textContent = stats.sessions || 0;
+    $('statWords').textContent = stats.words || 0;
+    $('statQuestions').textContent = stats.questions || 0;
+
+    if (project.titulo) {
+        $('welcomeTitle').textContent = project.titulo;
+        $('welcomeDesc').textContent =
+            'Tu proyecto está configurado. Practica tu exposición o responde preguntas de tus sinodales.';
+    }
+}
+
+/* =========================
+   TEMPORIZADOR
+========================= */
+
+function setDuration() {
+    if (running) return;
+
+    total = parseInt($('timerSelect').value, 10) * 60;
+    remaining = total;
+
+    updateTimer();
+}
+
+function updateTimer() {
+    const minutes = Math.floor(remaining / 60);
+    const seconds = remaining % 60;
+
+    $('timer').textContent =
+        String(minutes).padStart(2, '0') + ':' +
+        String(seconds).padStart(2, '0');
+}
+
+/* =========================
+   RECONOCIMIENTO DE VOZ
+========================= */
+
+function startPractice() {
+    if (running) return;
+
+    transcript = '';
+
+    $('transcript').textContent = '';
+    $('manualTranscript').value = '';
+    $('liveWords').textContent = '0';
+    $('liveFillers').textContent = '0';
+    $('fillerList').textContent = 'Escuchando...';
+
+    remaining = parseInt($('timerSelect').value, 10) * 60;
+    total = remaining;
+    startedAt = Date.now();
+    running = true;
+
+    $('startBtn').disabled = true;
+    $('stopBtn').disabled = false;
+    $('recDot').classList.add('live');
+    $('timerState').textContent = 'EXPOSICIÓN EN CURSO';
+    $('speechStatus').textContent = 'GRABANDO';
+    $('transcriptState').textContent = 'Reconociendo voz...';
+
+    updateTimer();
+
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
+
+    if (SpeechRecognition) {
+        recognition = new SpeechRecognition();
+
+        recognition.lang = 'es-MX';
+        recognition.continuous = true;
+        recognition.interimResults = true;
+
+        recognition.onresult = event => {
+            let finalText = '';
+            let interimText = '';
+
+            for (let i = event.resultIndex; i < event.results.length; i++) {
+                const result = event.results[i];
+
+                if (result.isFinal) {
+                    finalText += result[0].transcript + ' ';
+                } else {
+                    interimText += result[0].transcript;
+                }
+            }
+
+            if (finalText) transcript += finalText;
+
+            $('transcript').textContent = transcript + interimText;
+
+            updateLive(transcript + interimText);
+        };
+
+        recognition.onerror = event => {
+            console.error('SpeechRecognition:', event.error);
+
+            $('micHint').textContent =
+                'No se pudo reconocer la voz. Puedes usar la transcripción manual.';
+        };
+
+        recognition.onend = () => {
+            if (running && recognition) {
+                try {
+                    recognition.start();
+                } catch (error) {
+                    console.warn(error);
+                }
+            }
+        };
+
+        try {
+            recognition.start();
+
+            $('micHint').textContent =
+                'Micrófono activo. Habla con naturalidad.';
+        } catch (error) {
+            console.error(error);
+
+            $('micHint').textContent =
+                'No se pudo iniciar el micrófono. Usa la transcripción manual.';
+        }
+    } else {
+        $('micHint').textContent =
+            'Este navegador no soporta reconocimiento de voz. Puedes pegar tu transcripción.';
+    }
+
+    ticker = setInterval(() => {
+        if (remaining > 0) {
+            remaining--;
+            updateTimer();
+        } else {
+            stopPractice(true);
+        }
+    }, 1000);
+}
+
+function stopPractice(auto = false) {
+    if (!running) return;
+
+    running = false;
+
+    clearInterval(ticker);
+    ticker = null;
+
+    if (recognition) {
+        recognition.onend = null;
+
+        try {
+            recognition.stop();
+        } catch (error) {
+            console.warn(error);
+        }
+
+        recognition = null;
+    }
+
+    $('startBtn').disabled = false;
+    $('stopBtn').disabled = true;
+    $('recDot').classList.remove('live');
+
+    $('timerState').textContent =
+        auto ? 'TIEMPO AGOTADO' : 'PRÁCTICA FINALIZADA';
+
+    $('speechStatus').textContent = 'PRÁCTICA TERMINADA';
+    $('transcriptState').textContent = 'Transcripción finalizada';
+
+    if (auto) {
+        toast('Se agotó el tiempo. Tu exposición terminó automáticamente.');
+    }
+
+    const elapsedMinutes = Math.max(
+        0.01,
+        (Date.now() - startedAt) / 60000
+    );
+
+    analyzeText(transcript, elapsedMinutes);
+}
+
+/* =========================
+   ANÁLISIS DE TEXTO
+========================= */
 
 const fillers = [
     'este',
@@ -156,657 +467,41 @@ const fillers = [
     'verdad'
 ];
 
-
-/* -------------------------
-   FUNCIONES GENERALES
-------------------------- */
-
-function toast(message) {
-    const element = $('toast');
-
-    if (!element) {
-        alert(message);
-        return;
-    }
-
-    element.textContent = message;
-    element.style.display = 'block';
-
-    clearTimeout(element.toastTimeout);
-
-    element.toastTimeout = setTimeout(() => {
-        element.style.display = 'none';
-    }, 3000);
-}
-
-
-function escapeHTML(value) {
-    return String(value ?? '').replace(/[&<>"']/g, char => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    })[char]);
-}
-
-
-/*
- * Esta función centraliza las peticiones a PHP.
- * También permite mostrar errores cuando PHP devuelve
- * HTML, advertencias o respuestas que no son JSON.
- */
-async function apiRequest(url, options = {}) {
-
-    const response = await fetch(url, {
-        ...options,
-        headers: {
-            ...(options.headers || {})
-        }
-    });
-
-    const responseText = await response.text();
-
-    let data;
-
-    try {
-        data = JSON.parse(responseText);
-    } catch (error) {
-        console.error('Respuesta no válida del servidor:', responseText);
-
-        throw new Error(
-            'El servidor no devolvió JSON válido. Revisa los errores de PHP.'
-        );
-    }
-
-    if (!response.ok) {
-        throw new Error(
-            data.message || `Error del servidor (${response.status}).`
-        );
-    }
-
-    if (data.success === false) {
-        throw new Error(data.message || 'La operación no pudo completarse.');
-    }
-
-    return data;
-}
-
-
-/* -------------------------
-   NAVEGACIÓN
-------------------------- */
-
-function go(page) {
-
-    document.querySelectorAll('.page').forEach(element => {
-        element.classList.remove('active');
-    });
-
-    const selectedPage = $('page-' + page);
-
-    if (!selectedPage) {
-        console.error('Página no encontrada:', page);
-        return;
-    }
-
-    selectedPage.classList.add('active');
-
-    document.querySelectorAll('.nav button').forEach(button => {
-        button.classList.toggle(
-            'active',
-            button.dataset.page === page
-        );
-    });
-
-    const pageNames = {
-        inicio: 'Inicio',
-        proyecto: 'Mi proyecto',
-        practica: 'Practicar exposición',
-        simulador: 'Simular sinodales',
-        resultados: 'Mis resultados'
-    };
-
-    $('crumb').textContent = pageNames[page] || 'Inicio';
-
-    if (page === 'resultados') {
-        renderStats();
-    }
-
-    if (page === 'inicio') {
-        renderHome();
-    }
-
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-}
-
-
-document.querySelectorAll('.nav button').forEach(button => {
-    button.addEventListener('click', () => {
-        go(button.dataset.page);
-    });
-});
-
-
-/* -------------------------
-   PROYECTO
-------------------------- */
-
-async function saveProject() {
-
-    const proyecto = {
-
-        id_proyecto: proyectoId,
-
-        nombre_estudiante: $('estudiante').value.trim(),
-        carrera: $('carrera').value.trim(),
-
-        titulo: $('titulo').value.trim(),
-        descripcion: $('descripcion').value.trim(),
-
-        problematica: $('problematica').value.trim(),
-        objetivo: $('objetivo').value.trim(),
-        justificacion: $('justificacion').value.trim(),
-        metodologia: $('metodologia').value.trim(),
-
-        tecnologias: $('tecnologias').value.trim(),
-        resultados: $('resultadosProyecto').value.trim(),
-
-        duracion: parseInt($('duracion').value, 10),
-        preocupacion: $('preocupacion').value
-    };
-
-
-    if (!proyecto.titulo || !proyecto.descripcion) {
-        toast('Completa el título y la descripción del proyecto.');
-        return;
-    }
-
-
-    const boton = document.querySelector(
-        '#page-proyecto .actions button'
-    );
-
-    if (boton) {
-        boton.disabled = true;
-        boton.textContent = 'Guardando...';
-    }
-
-
-    try {
-
-        const data = await apiRequest('api/guardar_proyecto.php', {
-
-            method: 'POST',
-
-            headers: {
-                'Content-Type': 'application/json'
-            },
-
-            body: JSON.stringify(proyecto)
-
-        });
-
-
-        if (!data.id_proyecto) {
-            throw new Error('El servidor no devolvió el ID del proyecto.');
-        }
-
-
-        proyectoId = data.id_proyecto;
-
-        project = proyecto;
-
-        localStorage.setItem(
-            'defensaProyectoId',
-            proyectoId
-        );
-
-        localStorage.setItem(
-            'defensaProject',
-            JSON.stringify(project)
-        );
-
-
-        toast('Proyecto guardado correctamente.');
-
-        renderHome();
-
-        go('inicio');
-
-
-    } catch (error) {
-
-        console.error('Error al guardar proyecto:', error);
-
-        toast(error.message);
-
-    } finally {
-
-        if (boton) {
-            boton.disabled = false;
-            boton.innerHTML = 'Guardar contexto del proyecto →';
-        }
-
-    }
-
-}
-
-
-async function loadProject() {
-
-    if (!proyectoId) {
-        return;
-    }
-
-
-    try {
-
-        const data = await apiRequest(
-            `api/obtener_proyecto.php?id=${encodeURIComponent(proyectoId)}`
-        );
-
-
-        if (!data.proyecto) {
-            throw new Error('No se encontró el proyecto.');
-        }
-
-
-        const p = data.proyecto;
-
-
-        $('estudiante').value = p.nombre_estudiante || '';
-        $('carrera').value = p.carrera || '';
-
-        $('titulo').value = p.titulo || '';
-        $('descripcion').value = p.descripcion || '';
-
-        $('problematica').value = p.problematica || '';
-        $('objetivo').value = p.objetivo || '';
-        $('justificacion').value = p.justificacion || '';
-        $('metodologia').value = p.metodologia || '';
-
-        $('tecnologias').value = p.tecnologias || '';
-        $('resultadosProyecto').value = p.resultados || '';
-
-        $('duracion').value = p.duracion || 5;
-        $('preocupacion').value = p.preocupacion || 'Quedarme en blanco';
-
-
-        project = p;
-
-        localStorage.setItem(
-            'defensaProject',
-            JSON.stringify(project)
-        );
-
-
-        renderHome();
-
-    } catch (error) {
-
-        console.error('Error al recuperar proyecto:', error);
-
-        toast('No se pudo recuperar el proyecto: ' + error.message);
-
-    }
-
-}
-
-
-function renderHome() {
-
-    $('statSessions').textContent = stats.sessions || 0;
-    $('statWords').textContent = stats.words || 0;
-    $('statQuestions').textContent = stats.questions || 0;
-
-
-    if (project && project.titulo) {
-
-        $('welcomeTitle').textContent = project.titulo;
-
-        $('welcomeDesc').textContent =
-            'Tu asesor ya tiene el contexto de tu proyecto. Practica tu exposición o responde preguntas personalizadas.';
-
-    }
-
-}
-
-
-/* -------------------------
-   TEMPORIZADOR
-------------------------- */
-
-function setDuration() {
-
-    if (running) {
-        return;
-    }
-
-    total = parseInt($('timerSelect').value, 10) * 60;
-
-    remaining = total;
-
-    updateTimer();
-
-}
-
-
-function updateTimer() {
-
-    const minutes = Math.floor(remaining / 60);
-    const seconds = remaining % 60;
-
-    $('timer').textContent =
-        String(minutes).padStart(2, '0') +
-        ':' +
-        String(seconds).padStart(2, '0');
-
-}
-
-
-/* -------------------------
-   RECONOCIMIENTO DE VOZ
-------------------------- */
-
-function startPractice() {
-
-    if (running) {
-        return;
-    }
-
-
-    transcript = '';
-
-    $('transcript').textContent = '';
-
-    $('manualTranscript').value = '';
-
-    $('liveWords').textContent = '0';
-
-    $('liveFillers').textContent = '0';
-
-    $('fillerList').textContent = 'Escuchando...';
-
-
-    remaining = parseInt($('timerSelect').value, 10) * 60;
-
-    total = remaining;
-
-    startedAt = Date.now();
-
-    running = true;
-
-
-    $('startBtn').disabled = true;
-
-    $('stopBtn').disabled = false;
-
-    $('recDot').classList.add('live');
-
-    $('timerState').textContent = 'EXPOSICIÓN EN CURSO';
-
-    $('speechStatus').textContent = 'GRABANDO';
-
-    $('transcriptState').textContent = 'Reconociendo voz...';
-
-
-    updateTimer();
-
-
-    const SpeechRecognition =
-        window.SpeechRecognition ||
-        window.webkitSpeechRecognition;
-
-
-    if (SpeechRecognition) {
-
-        recognition = new SpeechRecognition();
-
-        recognition.lang = 'es-MX';
-
-        recognition.continuous = true;
-
-        recognition.interimResults = true;
-
-
-        recognition.onresult = function (event) {
-
-            let finalText = '';
-            let interimText = '';
-
-
-            for (
-                let i = event.resultIndex;
-                i < event.results.length;
-                i++
-            ) {
-
-                const result = event.results[i];
-
-                if (result.isFinal) {
-
-                    finalText += result[0].transcript + ' ';
-
-                } else {
-
-                    interimText += result[0].transcript;
-
-                }
-
-            }
-
-
-            if (finalText) {
-                transcript += finalText;
-            }
-
-
-            $('transcript').textContent =
-                transcript + interimText;
-
-
-            updateLive(transcript + interimText);
-
+function findFillers(text) {
+    const lower = text.toLowerCase();
+
+    return fillers.map(word => {
+        const escaped = word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const matches = lower.match(new RegExp(escaped, 'g')) || [];
+
+        return {
+            word,
+            n: matches.length
         };
-
-
-        recognition.onerror = function (event) {
-
-            console.error('Error de reconocimiento:', event.error);
-
-            $('micHint').textContent =
-                'No se pudo reconocer la voz (' +
-                event.error +
-                '). Puedes pegar tu transcripción manualmente.';
-
-        };
-
-
-        recognition.onend = function () {
-
-            if (running && recognition) {
-
-                try {
-                    recognition.start();
-                } catch (error) {
-                    console.warn('No se pudo reiniciar el reconocimiento:', error);
-                }
-
-            }
-
-        };
-
-
-        try {
-
-            recognition.start();
-
-            $('micHint').textContent =
-                'Micrófono activo. Habla con naturalidad.';
-
-        } catch (error) {
-
-            console.error(error);
-
-            $('micHint').textContent =
-                'No se pudo iniciar el reconocimiento. Usa la transcripción manual.';
-
-        }
-
-    } else {
-
-        $('micHint').textContent =
-            'Tu navegador no soporta reconocimiento de voz. Puedes pegar tu transcripción manualmente.';
-
-    }
-
-
-    ticker = setInterval(function () {
-
-        if (remaining > 0) {
-
-            remaining--;
-
-            updateTimer();
-
-        } else {
-
-            stopPractice(true);
-
-        }
-
-    }, 1000);
-
+    }).filter(item => item.n > 0);
 }
 
-
-function stopPractice(auto = false) {
-
-    if (!running) {
-        return;
-    }
-
-
-    running = false;
-
-    clearInterval(ticker);
-
-    ticker = null;
-
-
-    if (recognition) {
-
-        recognition.onend = null;
-
-        try {
-            recognition.stop();
-        } catch (error) {
-            console.warn(error);
-        }
-
-        recognition = null;
-
-    }
-
-
-    $('startBtn').disabled = false;
-
-    $('stopBtn').disabled = true;
-
-    $('recDot').classList.remove('live');
-
-
-    $('timerState').textContent =
-        auto ? 'TIEMPO AGOTADO' : 'PRÁCTICA FINALIZADA';
-
-    $('speechStatus').textContent = 'PRÁCTICA TERMINADA';
-
-    $('transcriptState').textContent = 'Transcripción finalizada';
-
-
-    if (auto) {
-        toast('Se agotó el tiempo. Tu exposición terminó automáticamente.');
-    }
-
-
-    const minutes = Math.max(
-        0.01,
-        (Date.now() - startedAt) / 60000
-    );
-
-
-    analyzeText(transcript, minutes);
-
+function countFillers(text) {
+    return findFillers(text).reduce((total, item) => total + item.n, 0);
 }
-
-
-/* -------------------------
-   ANÁLISIS DE TRANSCRIPCIÓN
-------------------------- */
 
 function updateLive(text) {
-
     const words = text.trim()
         ? text.trim().split(/\s+/).length
         : 0;
 
-    const count = countFillers(text);
+    const detected = findFillers(text);
+    const count = detected.reduce((total, item) => total + item.n, 0);
 
     $('liveWords').textContent = words;
-
     $('liveFillers').textContent = count;
 
-
     $('fillerList').textContent = count
-        ? count + ' expresiones detectadas: ' + findFillers(text).join(', ')
+        ? detected.map(item => `${item.word} (${item.n})`).join(', ')
         : 'No se detectan muletillas frecuentes.';
-
 }
-
-
-function countFillers(text) {
-
-    return findFillers(text).reduce((total, item) => {
-        return total + item.n;
-    }, 0);
-
-}
-
-
-function findFillers(text) {
-
-    const lower = text.toLowerCase();
-
-    return fillers
-        .map(word => {
-
-            const escaped = word.replace(
-                /[.*+?^${}()|[\]\\]/g,
-                '\\$&'
-            );
-
-            const matches = lower.match(
-                new RegExp(escaped, 'g')
-            ) || [];
-
-            return {
-                word: word,
-                n: matches.length
-            };
-
-        })
-        .filter(item => item.n > 0)
-        .map(item => item.word + ' (' + item.n + ')');
-
-}
-
 
 function analyzeManual() {
-
     const text = $('manualTranscript').value.trim();
 
     if (!text) {
@@ -814,380 +509,294 @@ function analyzeManual() {
         return;
     }
 
-
-    const minutes = parseInt($('timerSelect').value, 10);
+    const minutes = Math.max(0.1, parseInt($('timerSelect').value, 10));
 
     analyzeText(text, minutes);
-
 }
-
 
 function analyzeText(text, minutes) {
-
     if (!text || !text.trim()) {
-
         toast('No hay transcripción para analizar.');
-
         return;
-
     }
-
 
     const words = text.trim().split(/\s+/).length;
-
     const fillersCount = countFillers(text);
-
     const ppm = Math.round(words / Math.max(minutes, 0.1));
 
-    const pauses = Math.max(
-        0,
-        Math.round(text.split(/[.!?]/).length * 0.35)
-    );
-
-
     currentMetrics = {
-
-        words: words,
-
+        words,
         fillers: fillersCount,
-
-        ppm: ppm,
-
-        minutes: minutes,
-
-        pauses: pauses,
-
-        text: text
-
+        ppm,
+        minutes,
+        text
     };
 
-
     stats.sessions = (stats.sessions || 0) + 1;
-
     stats.words = (stats.words || 0) + words;
 
-
-    localStorage.setItem(
-        'defensaStats',
-        JSON.stringify(stats)
-    );
-
-    localStorage.setItem(
-        'defensaLast',
-        JSON.stringify(currentMetrics)
-    );
-
+    saveLocalData();
 
     renderStats();
-
     toast('Análisis de exposición listo.');
-
     go('resultados');
-
 }
 
-
-/* -------------------------
+/* =========================
    RESULTADOS
-------------------------- */
+========================= */
 
 function renderStats() {
+    const metrics = currentMetrics ||
+        JSON.parse(localStorage.getItem('defensaLast') || 'null');
 
-    let metrics = currentMetrics;
-
-
-    if (!metrics) {
-
-        try {
-
-            metrics = JSON.parse(
-                localStorage.getItem('defensaLast') || 'null'
-            );
-
-        } catch (error) {
-
-            metrics = null;
-
-        }
-
-    }
-
-
-    if (!metrics) {
-        return;
-    }
-
+    if (!metrics) return;
 
     $('resPpm').textContent = metrics.ppm;
-
     $('resFillers').textContent = metrics.fillers;
-
-    $('resDuration').textContent =
-        Number(metrics.minutes).toFixed(1) + ' min';
-
+    $('resDuration').textContent = Number(metrics.minutes).toFixed(1) + ' min';
 
     const clarity = metrics.words > 80
-
         ? 'Desarrollaste suficiente contenido para revisar la estructura de tus ideas.'
-
-        : 'Tu exposición fue breve. Intenta ampliar la explicación de tu problemática y tus resultados.';
-
+        : 'Tu exposición fue breve. Intenta ampliar la explicación de tu problemática y resultados.';
 
     const pace = metrics.ppm > 160
-
         ? 'Tu ritmo parece acelerado. Prueba hacer pausas al cambiar de idea.'
-
         : metrics.ppm < 90
-
             ? 'Tu ritmo parece lento. Practica mantener continuidad sin apresurarte.'
-
             : 'Tu velocidad está dentro de un rango orientativo cómodo.';
 
-
     const fillerFeedback = metrics.fillers > 8
-
         ? 'Se repiten varias muletillas. Sustitúyelas por pausas conscientes.'
-
         : 'El uso de muletillas fue moderado. Sigue prestando atención a las expresiones repetitivas.';
 
-
     $('diagnosis').innerHTML = `
-
         <div class="feedback-item">
             <b>Claridad y desarrollo</b>
             <p>${clarity}</p>
         </div>
-
         <div class="feedback-item">
             <b>Ritmo de habla</b>
             <p>${pace}</p>
         </div>
-
         <div class="feedback-item">
             <b>Muletillas</b>
             <p>${fillerFeedback}</p>
         </div>
-
         <div class="feedback-item">
             <b>Argumentación</b>
-            <p>
-                Revisa que expliques no solo qué hiciste,
-                sino por qué tomaste cada decisión y qué
-                evidencia respalda tus resultados.
-            </p>
+            <p>Revisa que expliques no solo qué hiciste, sino por qué tomaste cada decisión y qué evidencia respalda tus resultados.</p>
         </div>
-
     `;
-
 
     let recommendation = 'Prepara una explicación más profunda de tu metodología y resultados.';
 
     if (metrics.fillers > 8) {
-
         recommendation = 'Realiza una práctica enfocada en reducir muletillas.';
-
     } else if (metrics.ppm > 160) {
-
         recommendation = 'Practica una exposición más pausada.';
-
     }
-
 
     $('nextGoal').innerHTML = `
-
         <div class="tag">RECOMENDACIÓN PRINCIPAL</div>
-
-        <p style="font-size:14px;margin-top:12px">
-            ${recommendation}
-        </p>
-
-        <button class="btn secondary" onclick="go('simulador')">
-            Practicar preguntas →
-        </button>
-
+        <p style="font-size:14px;margin-top:12px">${recommendation}</p>
+        <button class="btn secondary" onclick="go('simulador')">Practicar preguntas →</button>
     `;
-
 }
 
+/* =========================
+   SIMULADOR LOCAL
+========================= */
 
-/* -------------------------
-   GENERAR PREGUNTAS
-------------------------- */
-
-async function generateQuestions() {
-
-    if (!proyectoId) {
-
+function generateQuestions() {
+    if (!project.titulo || !project.descripcion) {
         toast('Primero registra tu proyecto.');
-
         go('proyecto');
-
         return;
-
     }
-
 
     const perfil = $('perfil').value;
-
     const dificultad = $('dificultad').value;
 
+    const title = project.titulo;
+    const description = project.descripcion;
+    const problem = project.problematica || 'la problemática planteada';
+    const objective = project.objetivo || 'el objetivo de tu proyecto';
+    const methodology = project.metodologia || 'la metodología utilizada';
+    const technologies = project.tecnologias || 'las herramientas utilizadas';
+    const results = project.resultados || 'los resultados obtenidos';
+    const justification = project.justificacion || 'la importancia del proyecto';
 
-    const boton = document.querySelector(
-        '#page-simulador .actions button'
-    );
+    let pool = [];
 
-    if (boton) {
-        boton.disabled = true;
-        boton.textContent = 'Generando preguntas...';
+    if (perfil === 'Técnico') {
+        pool = [
+            {
+                pregunta: `¿Por qué elegiste ${technologies} para desarrollar "${title}"?`,
+                objetivo: 'Evaluar las decisiones técnicas y el conocimiento de las herramientas.',
+                tema: 'Tecnologías'
+            },
+            {
+                pregunta: '¿Qué limitaciones técnicas encontraste durante el desarrollo y cómo las resolviste?',
+                objetivo: 'Evaluar la resolución de problemas técnicos.',
+                tema: 'Desarrollo'
+            },
+            {
+                pregunta: '¿Cómo comprobarías que tu sistema funciona correctamente ante distintos escenarios?',
+                objetivo: 'Evaluar pruebas y validación.',
+                tema: 'Pruebas'
+            },
+            {
+                pregunta: 'Si tuvieras que escalar el proyecto para más usuarios, ¿qué modificarías?',
+                objetivo: 'Evaluar escalabilidad y arquitectura.',
+                tema: 'Arquitectura'
+            },
+            {
+                pregunta: '¿Qué parte de tu desarrollo consideras más compleja y por qué?',
+                objetivo: 'Evaluar dominio técnico.',
+                tema: 'Implementación'
+            }
+        ];
+    } else if (perfil === 'Metodológico') {
+        pool = [
+            {
+                pregunta: `¿Cómo definiste ${methodology} y por qué es adecuada para este proyecto?`,
+                objetivo: 'Evaluar la coherencia metodológica.',
+                tema: 'Metodología'
+            },
+            {
+                pregunta: '¿Cómo identificaste y delimitaste la problemática que buscabas resolver?',
+                objetivo: 'Evaluar la definición del problema.',
+                tema: 'Investigación'
+            },
+            {
+                pregunta: '¿Qué criterios utilizaste para determinar si se cumplió el objetivo?',
+                objetivo: 'Evaluar la relación entre objetivos y resultados.',
+                tema: 'Evaluación'
+            },
+            {
+                pregunta: '¿Qué otras metodologías consideraste y por qué descartaste las demás?',
+                objetivo: 'Evaluar justificación metodológica.',
+                tema: 'Decisiones'
+            },
+            {
+                pregunta: '¿Qué cambiarías en el procedimiento si tuvieras más tiempo para realizarlo?',
+                objetivo: 'Evaluar reflexión crítica.',
+                tema: 'Mejora'
+            }
+        ];
+    } else if (perfil === 'Crítico') {
+        pool = [
+            {
+                pregunta: `¿Qué evidencia tienes de que "${title}" realmente resuelve ${problem}?`,
+                objetivo: 'Evaluar evidencia y validez.',
+                tema: 'Impacto'
+            },
+            {
+                pregunta: '¿Cuál es la principal debilidad de tu proyecto y cómo la defenderías?',
+                objetivo: 'Evaluar autocrítica y argumentación.',
+                tema: 'Limitaciones'
+            },
+            {
+                pregunta: '¿Qué sucedería si tu solución no se comportara como esperas en un escenario real?',
+                objetivo: 'Evaluar riesgos.',
+                tema: 'Escenarios'
+            },
+            {
+                pregunta: '¿Por qué tu propuesta es mejor que una alternativa más sencilla?',
+                objetivo: 'Evaluar pertinencia y comparación.',
+                tema: 'Alternativas'
+            },
+            {
+                pregunta: '¿Qué afirmación de tu proyecto sería más difícil de demostrar?',
+                objetivo: 'Evaluar rigor.',
+                tema: 'Validación'
+            }
+        ];
+    } else {
+        pool = [
+            {
+                pregunta: `¿Puedes explicar de manera breve en qué consiste "${title}"?`,
+                objetivo: 'Evaluar claridad y síntesis.',
+                tema: 'Introducción'
+            },
+            {
+                pregunta: `¿Qué te motivó a desarrollar este proyecto y por qué es importante?`,
+                objetivo: 'Evaluar contexto y justificación.',
+                tema: 'Motivación'
+            },
+            {
+                pregunta: '¿Cuál fue el principal reto durante el desarrollo?',
+                objetivo: 'Evaluar experiencia y resolución de problemas.',
+                tema: 'Retos'
+            },
+            {
+                pregunta: `¿Qué resultados obtuviste y qué significan?`,
+                objetivo: 'Evaluar comprensión de resultados.',
+                tema: 'Resultados'
+            },
+            {
+                pregunta: '¿Qué aprendiste y qué mejorarías si continuaras con el proyecto?',
+                objetivo: 'Evaluar reflexión.',
+                tema: 'Conclusiones'
+            }
+]   ;
     }
 
+    // La dificultad modifica la complejidad de las preguntas.
+    if (dificultad === 'Avanzado') {
+        pool = pool.map(q => ({
+            ...q,
+            pregunta: q.pregunta + ' Fundamenta tu respuesta considerando limitaciones, evidencia y posibles alternativas.'
+        }));
+    } else if (dificultad === 'Básico') {
+        pool = pool.map(q => ({
+            ...q,
+            pregunta: q.pregunta.replace(/¿/g, '¿Podrías explicar: ¿').replace(/\?$/, '?')
+        }));
+    }
 
-    $('questionArea').innerHTML = `
+    // Agregamos un contexto de proyecto para preguntas generales.
+    if (perfil === 'General' && description) {
+        pool.push({
+            pregunta: `Considerando que tu proyecto consiste en ${description}, ¿qué beneficio concreto ofrece a sus usuarios?`,
+            objetivo: 'Evaluar el beneficio y la utilidad del proyecto.',
+            tema: 'Propuesta de valor'
+        });
+    }
 
-        <div class="empty">
-
-            <div class="score">✦</div>
-
-            <p>El sinodal está analizando tu proyecto...</p>
-
-            <p class="muted small">
-                Estamos preparando preguntas personalizadas.
-            </p>
-
-        </div>
-
-    `;
-
+    questions = pool.sort(() => Math.random() - 0.5).slice(0, 5);
+    qIndex = 0;
+    currentQuestion = null;
 
     $('answerArea').style.display = 'none';
-
+    $('qCounter').textContent = 'SIMULACIÓN';
     $('answerFeedback').innerHTML = `
-        <div class="empty">Preparando la simulación...</div>
+        <div class="empty">
+            Simulación local lista. Las preguntas se construyeron
+            usando el contexto que registraste.
+        </div>
     `;
 
+    showQuestion();
 
-    try {
-
-        const data = await apiRequest(
-            'api/generar_preguntas.php',
-            {
-
-                method: 'POST',
-
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
-                body: JSON.stringify({
-
-                    id_proyecto: proyectoId,
-
-                    perfil: perfil,
-
-                    dificultad: dificultad
-
-                })
-
-            }
-        );
-
-
-        if (!data.id_simulacion) {
-            throw new Error('No se recibió el ID de la simulación.');
-        }
-
-        if (!Array.isArray(data.preguntas) || data.preguntas.length === 0) {
-            throw new Error('La IA no devolvió preguntas.');
-        }
-
-
-        simulacionId = data.id_simulacion;
-
-        questions = data.preguntas;
-
-        qIndex = 0;
-
-
-        $('answerFeedback').innerHTML = `
-
-            <div class="empty">
-                Tu sinodal está listo.
-                Responde con tus propias palabras.
-            </div>
-
-        `;
-
-
-        showQuestion();
-
-        toast('Preguntas generadas correctamente.');
-
-
-    } catch (error) {
-
-        console.error('Error al generar preguntas:', error);
-
-
-        $('questionArea').innerHTML = `
-
-            <div class="empty">
-
-                No se pudieron generar las preguntas.
-
-                <p>${escapeHTML(error.message)}</p>
-
-                <button class="btn secondary" onclick="generateQuestions()">
-                    Intentar nuevamente
-                </button>
-
-            </div>
-
-        `;
-
-    } finally {
-
-        if (boton) {
-            boton.disabled = false;
-            boton.textContent = 'Generar preguntas personalizadas ✦';
-        }
-
-    }
-
+    toast('Preguntas de demostración generadas.');
 }
 
-
-/* -------------------------
+/* =========================
    MOSTRAR PREGUNTA
-------------------------- */
+========================= */
 
 function showQuestion() {
-
     const question = questions[qIndex];
 
+    if (!question) return;
 
-    if (!question) {
+    currentQuestion = question;
 
-        $('questionArea').innerHTML = `
-            <div class="empty">
-                No hay más preguntas disponibles.
-            </div>
-        `;
-
-        $('answerArea').style.display = 'none';
-
-        $('qCounter').textContent = 'FINALIZADO';
-
-        return;
-
-    }
-
-
-    $('qCounter').textContent =
-        `PREGUNTA ${qIndex + 1}`;
-
+    $('qCounter').textContent = `PREGUNTA ${qIndex + 1} / ${questions.length}`;
 
     $('questionArea').innerHTML = `
-
         <span class="tag">
             SINODAL ${escapeHTML($('perfil').value.toUpperCase())}
         </span>
@@ -1197,840 +806,1655 @@ function showQuestion() {
         </div>
 
         <div class="feedback-item">
-
             <b>¿Qué busca evaluar?</b>
-
-            <p>
-                ${escapeHTML(
-                    question.objetivo || 'Comprensión del proyecto'
-                )}
-            </p>
-
+            <p>${escapeHTML(question.objetivo || 'Comprensión del proyecto')}</p>
         </div>
 
         <div class="feedback-item">
-
             <b>Tema</b>
-
-            <p>
-                ${escapeHTML(
-                    question.tema || 'Defensa académica'
-                )}
-            </p>
-
+            <p>${escapeHTML(question.tema || 'Defensa académica')}</p>
         </div>
 
         <p class="muted small">
-            Organiza tus ideas y responde como si estuvieras
-            frente a tus sinodales.
+            Organiza tus ideas y responde como si estuvieras frente a tus sinodales.
         </p>
-
     `;
-
 
     $('answerArea').style.display = 'block';
-
     $('answer').value = '';
-
     $('answer').focus();
-
 }
 
+/* =========================
+   EVALUACIÓN SIMULADA
+========================= */
 
-/* -------------------------
-   EVALUAR RESPUESTA
-------------------------- */
+function evaluateAnswer() {
+    const answer = $('answer').value.trim();
 
-async function evaluateAnswer() {
-
-    const respuesta = $('answer').value.trim();
-
-
-    if (respuesta.length < 10) {
-
+    if (answer.length < 10) {
         toast('Desarrolla un poco más tu respuesta.');
-
         return;
-
     }
 
-
-    if (!simulacionId) {
-
-        toast('Primero inicia una simulación.');
-
+    if (!currentQuestion) {
+        toast('Genera primero las preguntas.');
         return;
-
     }
 
+    const words = answer.split(/\s+/).length;
+    const hasReasoning = /\bporque\b|\bdebido\b|\bya que\b|\bpor lo tanto\b|\bconsiderando\b/i.test(answer);
+    const hasEvidence = /\bresultado\b|\bprueba\b|\bdato\b|\bevidencia\b|\bmedición\b|\bse comprobó\b/i.test(answer);
+    const hasContext = answer.length > 100;
 
-    const numero = qIndex;
+    let score = 45;
 
+    if (words >= 20) score += 10;
+    if (words >= 40) score += 10;
+    if (hasReasoning) score += 15;
+    if (hasEvidence) score += 10;
+    if (hasContext) score += 10;
 
-    const boton = document.querySelector(
-        '#answerArea .actions button'
-    );
+    score = Math.min(100, score);
 
+    const strengths = [];
+    const improvements = [];
 
-    if (boton) {
-        boton.disabled = true;
-        boton.textContent = 'Evaluando...';
+    if (words >= 30) {
+        strengths.push('Desarrollaste tu respuesta con suficiente contenido.');
+    } else {
+        improvements.push('Amplía tu explicación para que el sinodal comprenda mejor tu idea.');
     }
 
+    if (hasReasoning) {
+        strengths.push('Incluiste una justificación o explicación de tus decisiones.');
+    } else {
+        improvements.push('Explica por qué tomaste esa decisión, no solo qué hiciste.');
+    }
 
-    $('answerFeedback').innerHTML = `
+    if (hasEvidence) {
+        strengths.push('Mencionaste resultados, pruebas o evidencia.');
+    } else {
+        improvements.push('Incluye algún resultado, dato o evidencia que respalde tu argumento');
+    }
 
-        <div class="empty">
+    if (hasContext) {
+        strengths.push('Tu respuesta contiene información que puede relacionarse con el contexto del proyecto.');
+    }
 
-            <div class="score">✦</div>
+    const suggestedAnswer =
+        `Una respuesta más sólida podría comenzar explicando ${currentQuestion.tema.toLowerCase()}, ` +
+        `después justificar tu decisión con el contexto de "${project.titulo}" y finalmente ` +
+        `mencionar evidencia, resultados o una limitación que hayas identificado.`;
 
-            <p>Gemini está evaluando tu respuesta...</p>
+    const followUps = [
+        '¿Qué evidencia concreta podrías presentar para respaldar esa afirmación?',
+        '¿Qué alternativa consideraste antes de tomar esa decisión?',
+        '¿Cómo comprobarías que esa solución funciona correctamente?',
+        '¿Qué limitación reconoces en esa respuesta?',
+        '¿Qué cambiarías si tuvieras que realizar el proyecto nuevamente?'
+    ];
 
-            <p class="muted small">
-                Analizando claridad, pertinencia y argumentación.
-            </p>
+    const followUp = followUps[Math.floor(Math.random() * followUps.length)];
 
+    const feedbackHTML = `
+        <div class="score">${score}/100</div>
+
+        <span class="tag">EVALUACIÓN SIMULADA</span>
+
+        <div class="feedback-item">
+            <b>Fortalezas</b>
+            <ul>${strengths.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>
         </div>
 
+        <div class="feedback-item">
+            <b>Oportunidades de mejora</b>
+            <ul>${improvements.map(item => `<li>${escapeHTML(item)}</li>`).join('')}</ul>
+        </div>
+
+        <div class="feedback-item">
+            <b>Ejemplo de respuesta mejorada</b>
+            <p>${escapeHTML(suggestedAnswer)}</p>
+        </div>
+
+        <div class="feedback-item">
+            <b>Pregunta de seguimiento</b>
+            <p>${escapeHTML(followUp)}</p>
+        </div>
     `;
 
-
-    try {
-
-        const data = await apiRequest(
-            'api/evaluar_respuesta.php',
-            {
-
-                method: 'POST',
-
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-
-                body: JSON.stringify({
-
-                    id_simulacion: simulacionId,
-
-                    numero_pregunta: numero,
-
-                    respuesta: respuesta
-
-                })
-
-            }
-        );
-
-
-        const evaluation = data.evaluacion;
-
-
-        if (!evaluation) {
-            throw new Error('No se recibió la evaluación de Gemini.');
-        }
-
-
-        const strengths = Array.isArray(evaluation.fortalezas)
-            ? evaluation.fortalezas
-            : [];
-
-        const improvements = Array.isArray(evaluation.mejoras)
-            ? evaluation.mejoras
-            : [];
-
-
-        const listHTML = items => {
-
-            if (items.length === 0) {
-                return '<li>No se proporcionaron observaciones.</li>';
-            }
-
-            return items.map(item => {
-                return `<li>${escapeHTML(item)}</li>`;
-            }).join('');
-
-        };
-
-
-        const score = Number(evaluation.puntaje) || 0;
-
-        const followUp = String(
-            evaluation.pregunta_seguimiento || ''
-        ).trim();
-
-
-        let html = `
-
-            <div class="score">
-                ${score}/100
-            </div>
-
-            <span class="tag">
-                EVALUACIÓN DEL SINODAL
-            </span>
-
-            <div class="feedback-item">
-
-                <b>Fortalezas</b>
-
-                <ul>
-                    ${listHTML(strengths)}
-                </ul>
-
-            </div>
-
-            <div class="feedback-item">
-
-                <b>Oportunidades de mejora</b>
-
-                <ul>
-                    ${listHTML(improvements)}
-                </ul>
-
-            </div>
-
-            <div class="feedback-item">
-
-                <b>Ejemplo de respuesta mejorada</b>
-
-                <p>
-                    ${escapeHTML(
-                        evaluation.respuesta_sugerida ||
-                        'No se generó una respuesta sugerida.'
-                    )}
-                </p>
-
-            </div>
-
-        `;
-
-
-        /*
-         * Las preguntas de seguimiento se agregan
-         * después de las preguntas originales.
-         *
-         * Se permite un seguimiento por cada pregunta
-         * original, hasta un máximo de 10 preguntas.
-         */
-
-        if (followUp && numero < 5 && questions.length < 10) {
-
-            html += `
-
-                <div class="feedback-item">
-
-                    <b>Pregunta de seguimiento</b>
-
-                    <p>${escapeHTML(followUp)}</p>
-
-                </div>
-
-            `;
-
-
-            questions.push({
-
-                pregunta: followUp,
-
-                objetivo: 'Profundizar en tu respuesta anterior',
-
-                tema: 'Pregunta de seguimiento'
-
-            });
-
-        }
-
-
-        $('answerFeedback').innerHTML = html;
-
-
-        if (qIndex < questions.length - 1) {
-
-            $('answerFeedback').innerHTML += `
-
-                <div class="actions">
-
-                    <button class="btn primary"
-                        onclick="nextQuestion()">
-
-                        Siguiente pregunta →
-
-                    </button>
-
-                </div>
-
-            `;
-
-        } else {
-
-            $('answerFeedback').innerHTML += `
-
-                <div class="pill">
-                    Simulación completada
-                </div>
-
-            `;
-
-        }
-
-
-        stats.questions = (stats.questions || 0) + 1;
-
-
-        localStorage.setItem(
-            'defensaStats',
-            JSON.stringify(stats)
-        );
-
-
-        renderHome();
-
-
-    } catch (error) {
-
-        console.error('Error al evaluar respuesta:', error);
-
-
-        $('answerFeedback').innerHTML = `
-
-            <div class="empty">
-
-                No se pudo evaluar la respuesta.
-
-                <p>${escapeHTML(error.message)}</p>
-
-                <button class="btn secondary"
-                    onclick="evaluateAnswer()">
-
-                    Intentar nuevamente
-
-                </button>
-
-            </div>
-
-        `;
-
-    } finally {
-
-        if (boton) {
-            boton.disabled = false;
-            boton.textContent = 'Evaluar mi respuesta';
-        }
-
-    }
-
-}
-
-
-/* -------------------------
-   SIGUIENTE PREGUNTA
-------------------------- */
-
-function nextQuestion() {
+    $('answerFeedback').innerHTML = feedbackHTML;
 
     if (qIndex < questions.length - 1) {
-
-        qIndex++;
-
-        showQuestion();
-
-    } else {
-
-        $('answerArea').style.display = 'none';
-
-        $('qCounter').textContent = 'FINALIZADO';
-
-        $('questionArea').innerHTML = `
-
-            <div class="empty">
-
-                <div class="score">✓</div>
-
-                <h3>¡Simulación completada!</h3>
-
-                <p>
-                    Has terminado las preguntas de esta sesión.
-                    Sigue practicando para fortalecer tu defensa.
-                </p>
-
+        $('answerFeedback').innerHTML += `
+            <div class="actions">
+                <button class="btn primary" onclick="nextQuestion()">
+                    Siguiente pregunta →
+                </button>
             </div>
-
         `;
-
+    } else {
+        $('answerFeedback').innerHTML += `
+            <div class="pill">Simulación completada</div>
+            <div class="actions">
+                <button class="btn secondary" onclick="generateQuestions()">
+                    Nueva simulación
+        </button>
+            </div>
+        `;
     }
 
+    stats.questions = (stats.questions || 0) + 1;
+
+    saveLocalData();
+    renderHome();
+
+    toast('Evaluación de demostración completada.');
 }
 
+/* =========================
+   SIGUIENTE PREGUNTA
+========================= */
 
-/* -------------------------
-   INICIALIZACIÓN
-------------------------- */
+function nextQuestion() {
+    if (qIndex < questions.length - 1) {
+        qIndex++;
+        showQuestion();
 
-document.addEventListener('DOMContentLoaded', function () {
-
-    try {
-
-        loadProject();
-
-        renderHome();
-
-        renderStats();
-
-        setDuration();
-
-    } catch (error) {
-
-        console.error('Error al iniciar Tell Me More:', error);
-
-        toast('Ocurrió un error al iniciar la aplicación.');
-
+        $('answerFeedback').innerHTML = `
+            <div class="empty">
+                Responde la pregunta y recibe retroalimentación simulada.
+            </div>
+        `;
     }
+}
 
+/* =========================
+   INICIALIZACIÓN
+========================= */
+
+document.addEventListener('DOMContentLoaded', () => {
+    loadProject();
+    renderHome();
+    renderStats();
+    setDuration();
 });
 
-</script>
-<!-- <script>
+/* =========================================================
+   Tell Me More - JAVASCRIPT
+   Conserva el HTML y CSS originales.
+   ========================================================= */
+
+/* -------------------------
+   VARIABLES GENERALES
+------------------------- */
+
+// const $ = id => document.getElementById(id);
+
 // let proyectoId = localStorage.getItem('defensaProyectoId') || null;
 // let simulacionId = null;
+
+// let project = JSON.parse(localStorage.getItem('defensaProject') || '{}');
+
+// let stats = JSON.parse(
+//     localStorage.getItem('defensaStats') ||
+//     '{"sessions":0,"words":0,"questions":0}'
+// );
+
+// let recognition = null;
+// let running = false;
+// let remaining = 300;
+// let total = 300;
+// let ticker = null;
+// let startedAt = 0;
+// let transcript = '';
 // let questions = [];
 // let qIndex = 0;
-let proyectoId = localStorage.getItem('defensaProyectoId') || null;
-let simulacionId = null;
+// let currentMetrics = null;
+
+// const fillers = [
+//     'este',
+//     'eh',
+//     'em',
+//     'mmm',
+//     'pues',
+//     'o sea',
+//     'digamos',
+//     '¿no?',
+//     'verdad'
+// ];
+
+
+// /* -------------------------
+//    FUNCIONES GENERALES
+// ------------------------- */
+
+// function toast(message) {
+//     const element = $('toast');
+
+//     if (!element) {
+//         alert(message);
+//         return;
+//     }
+
+//     element.textContent = message;
+//     element.style.display = 'block';
+
+//     clearTimeout(element.toastTimeout);
+
+//     element.toastTimeout = setTimeout(() => {
+//         element.style.display = 'none';
+//     }, 3000);
+// }
+
+
+// function escapeHTML(value) {
+//     return String(value ?? '').replace(/[&<>"']/g, char => ({
+//         '&': '&amp;',
+//         '<': '&lt;',
+//         '>': '&gt;',
+//         '"': '&quot;',
+//         "'": '&#039;'
+//     })[char]);
+// }
+
+
+// /*
+//  * Esta función centraliza las peticiones a PHP.
+//  * También permite mostrar errores cuando PHP devuelve
+//  * HTML, advertencias o respuestas que no son JSON.
+//  */
+// async function apiRequest(url, options = {}) {
 
-const $=id=>document.getElementById(id);
-let project=JSON.parse(localStorage.getItem('defensaProject')||'{}');
-let stats=JSON.parse(localStorage.getItem('defensaStats')||'{"sessions":0,"words":0,"questions":0}');
-let recognition=null, running=false, remaining=300, total=300, ticker=null, startedAt=0, transcript='', questions=[], qIndex=0, currentMetrics=null;
-const fillers=['este','eh','em','mmm','pues','o sea','digamos','¿no?','verdad'];
-function toast(msg){$('toast').textContent=msg;$('toast').style.display='block';setTimeout(()=>$('toast').style.display='none',2600)}
-function go(page){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));$('page-'+page).classList.add('active');document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.page===page));$('crumb').textContent=({inicio:'Inicio',proyecto:'Mi proyecto',practica:'Practicar exposición',simulador:'Simular sinodales',resultados:'Mis resultados'})[page];if(page==='resultados')renderStats();if(page==='inicio')renderHome();window.scrollTo(0,0)}
-document.querySelectorAll('.nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+//     const response = await fetch(url, {
+//         ...options,
+//         headers: {
+//             ...(options.headers || {})
+//         }
+//     });
 
-async function saveProject() {
+//     const responseText = await response.text();
 
-    const proyecto = {
-        id_proyecto: proyectoId,
+//     let data;
 
-        nombre_estudiante: $('estudiante').value.trim(),
-        carrera: $('carrera').value.trim(),
-        titulo: $('titulo').value.trim(),
-        descripcion: $('descripcion').value.trim(),
+//     try {
+//         data = JSON.parse(responseText);
+//     } catch (error) {
+//         console.error('Respuesta no válida del servidor:', responseText);
 
-        problematica: $('problematica').value.trim(),
-        objetivo: $('objetivo').value.trim(),
-        justificacion: $('justificacion').value.trim(),
-        metodologia: $('metodologia').value.trim(),
+//         throw new Error(
+//             'El servidor no devolvió JSON válido. Revisa los errores de PHP.'
+//         );
+//     }
 
-        tecnologias: $('tecnologias').value.trim(),
-        resultados: $('resultadosProyecto').value.trim(),
+//     if (!response.ok) {
+//         throw new Error(
+//             data.message || `Error del servidor (${response.status}).`
+//         );
+//     }
 
-        duracion: $('duracion').value,
-        preocupacion: $('preocupacion').value
-    };
+//     if (data.success === false) {
+//         throw new Error(data.message || 'La operación no pudo completarse.');
+//     }
 
-    if (!proyecto.titulo || !proyecto.descripcion) {
-        toast('Completa el título y descripción.');
-        return;
-    }
+//     return data;
+// }
 
-    try {
 
-        const response = await fetch(
-            'api/guardar_proyecto.php',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(proyecto)
-            }
-        );
+// /* -------------------------
+//    NAVEGACIÓN
+// ------------------------- */
 
-        const data = await response.json();
+// function go(page) {
 
-        if (!response.ok || !data.success) {
-            throw new Error(data.message || 'Error al guardar.');
-        }
+//     document.querySelectorAll('.page').forEach(element => {
+//         element.classList.remove('active');
+//     });
 
-        proyectoId = data.id_proyecto;
+//     const selectedPage = $('page-' + page);
 
-        localStorage.setItem(
-            'defensaProyectoId',
-            proyectoId
-        );
+//     if (!selectedPage) {
+//         console.error('Página no encontrada:', page);
+//         return;
+//     }
 
-        project = proyecto;
+//     selectedPage.classList.add('active');
 
-        toast('Proyecto guardado correctamente.');
+//     document.querySelectorAll('.nav button').forEach(button => {
+//         button.classList.toggle(
+//             'active',
+//             button.dataset.page === page
+//         );
+//     });
 
-        renderHome();
-        go('inicio');
+//     const pageNames = {
+//         inicio: 'Inicio',
+//         proyecto: 'Mi proyecto',
+//         practica: 'Practicar exposición',
+//         simulador: 'Simular sinodales',
+//         resultados: 'Mis resultados'
+//     };
 
-    } catch (error) {
+//     $('crumb').textContent = pageNames[page] || 'Inicio';
 
-        console.error(error);
-        toast(error.message);
+//     if (page === 'resultados') {
+//         renderStats();
+//     }
 
-    }
-}
+//     if (page === 'inicio') {
+//         renderHome();
+//     }
 
+//     window.scrollTo({
+//         top: 0,
+//         behavior: 'smooth'
+//     });
+// }
 
-async function loadProject() {
-
-    if (!proyectoId) return;
-
-    try {
-
-        const response = await fetch(
-            `api/obtener_proyecto.php?id=${proyectoId}`
-        );
-
-        const data = await response.json();
-
-        if (!data.success) {
-            throw new Error(data.message);
-        }
 
-        const p = data.proyecto;
-
-        $('estudiante').value = p.nombre_estudiante || '';
-        $('carrera').value = p.carrera || '';
-        $('titulo').value = p.titulo || '';
-        $('descripcion').value = p.descripcion || '';
-
-        $('problematica').value = p.problematica || '';
-        $('objetivo').value = p.objetivo || '';
-        $('justificacion').value = p.justificacion || '';
-        $('metodologia').value = p.metodologia || '';
-
-        $('tecnologias').value = p.tecnologias || '';
-        $('resultadosProyecto').value = p.resultados || '';
-
-        $('duracion').value = p.duracion || 5;
-        $('preocupacion').value = p.preocupacion || '';
-
-        project = {
-            titulo: p.titulo,
-            descripcion: p.descripcion,
-            objetivo: p.objetivo,
-            tecnologias: p.tecnologias
-        };
-
-        renderHome();
-
-    } catch (error) {
-
-        console.error(error);
-        toast('No se pudo recuperar el proyecto.');
-
-    }
-}
-
-function renderHome(){$('statSessions').textContent=stats.sessions;$('statWords').textContent=stats.words;$('statQuestions').textContent=stats.questions;if(project.titulo){$('welcomeTitle').textContent=project.titulo;$('welcomeDesc').textContent='Tu asesor ya tiene el contexto de tu proyecto. Practica tu exposición o responde preguntas personalizadas.'}}
-function setDuration(){if(running)return;total=parseInt($('timerSelect').value)*60;remaining=total;updateTimer()}
-function updateTimer(){$('timer').textContent=String(Math.floor(remaining/60)).padStart(2,'0')+':'+String(remaining%60).padStart(2,'0')}
-function startPractice(){if(running)return;transcript='';$('transcript').textContent='';$('manualTranscript').value='';$('liveWords').textContent='0';$('liveFillers').textContent='0';$('fillerList').textContent='Escuchando...';remaining=parseInt($('timerSelect').value)*60;total=remaining;startedAt=Date.now();running=true;$('startBtn').disabled=true;$('stopBtn').disabled=false;$('recDot').classList.add('live');$('timerState').textContent='EXPOSICIÓN EN CURSO';$('speechStatus').textContent='GRABANDO';$('transcriptState').textContent='Reconociendo voz...';updateTimer();
- const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
- if(SR){recognition=new SR();recognition.lang='es-MX';recognition.continuous=true;recognition.interimResults=true;recognition.onresult=e=>{let final='';let interim='';for(let i=e.resultIndex;i<e.results.length;i++){if(e.results[i].isFinal)final+=e.results[i][0].transcript+' ';else interim+=e.results[i][0].transcript}if(final)transcript+=final;$('transcript').textContent=transcript+interim;updateLive(transcript+interim)};recognition.onerror=e=>{$('micHint').textContent='No se pudo reconocer la voz ('+e.error+'). Puedes pegar tu transcripción manualmente.'};recognition.onend=()=>{if(running){try{recognition.start()}catch(e){}}};try{recognition.start();$('micHint').textContent='Micrófono activo. Habla con naturalidad.'}catch(e){$('micHint').textContent='No se pudo iniciar el reconocimiento. Usa la transcripción manual.'}}
- else{$('micHint').textContent='Tu navegador no soporta SpeechRecognition. Puedes pegar tu transcripción manualmente.'}
- ticker=setInterval(()=>{if(remaining>0){remaining--;updateTimer()}else stopPractice(true)},1000)}
-function stopPractice(auto){if(!running)return;running=false;clearInterval(ticker);if(recognition){recognition.onend=null;try{recognition.stop()}catch(e){}recognition=null} $('startBtn').disabled=false;$('stopBtn').disabled=true;$('recDot').classList.remove('live');$('timerState').textContent=auto?'TIEMPO AGOTADO':'PRÁCTICA FINALIZADA';$('speechStatus').textContent='PRÁCTICA TERMINADA';$('transcriptState').textContent='Transcripción finalizada';if(auto)toast('Se agotó el tiempo. Tu exposición terminó automáticamente.');analyzeText(transcript,Math.max(1,Math.round((Date.now()-startedAt)/60000*100)/100))}
-function updateLive(t){let w=t.trim()?t.trim().split(/\s+/).length:0;let f=countFillers(t);$('liveWords').textContent=w;$('liveFillers').textContent=f;$('fillerList').textContent=f?f+' expresiones detectadas: '+findFillers(t).join(', '):'No se detectan muletillas frecuentes.'}
-function countFillers(t){return findFillers(t).reduce((a,x)=>a+x.n,0)}
-function findFillers(t){let low=t.toLowerCase();return fillers.map(f=>({word:f,n:(low.match(new RegExp(f.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'g'))||[]).length})).filter(x=>x.n>0).map(x=>x.word+' ('+x.n+')')}
-function analyzeManual(){let t=$('manualTranscript').value.trim();if(!t){toast('Pega primero una transcripción.');return}analyzeText(t,Math.max(1,parseInt($('timerSelect').value)*.65/60))}
-function analyzeText(t,minutes){if(!t||!t.trim()){toast('No hay transcripción para analizar.');return}let words=t.trim().split(/\s+/).length, f=countFillers(t), ppm=Math.round(words/Math.max(minutes,.1));let pauses=Math.max(0,Math.round(t.split(/[.!?]/).length*.35));currentMetrics={words,fillers:f,ppm,minutes,pauses,text:t};stats.sessions++;stats.words+=words;localStorage.setItem('defensaStats',JSON.stringify(stats));localStorage.setItem('defensaLast',JSON.stringify(currentMetrics));renderStats();toast('Análisis de exposición listo.');go('resultados')}
-function renderStats(){let m=currentMetrics||JSON.parse(localStorage.getItem('defensaLast')||'null');if(!m)return;$('resPpm').textContent=m.ppm;$('resFillers').textContent=m.fillers;$('resDuration').textContent=m.minutes.toFixed(1)+' min';let clarity=m.words>80?'Desarrollaste suficiente contenido para revisar la estructura de tus ideas.':'Tu exposición fue breve. Intenta ampliar la explicación de tu problemática y tus resultados.';let pace=m.ppm>160?'Tu ritmo parece acelerado. Prueba hacer pausas al cambiar de idea.':m.ppm<90?'Tu ritmo parece lento. Practica mantener continuidad sin apresurarte.':'Tu velocidad está dentro de un rango orientativo cómodo.';let f=m.fillers>8?'Se repiten varias muletillas. Sustitúyelas por pausas conscientes.':'El uso de muletillas fue moderado. Sigue prestando atención a las expresiones repetitivas.';$('diagnosis').innerHTML='<div class="feedback-item"><b>Claridad y desarrollo</b><p>'+clarity+'</p></div><div class="feedback-item"><b>Ritmo de habla</b><p>'+pace+'</p></div><div class="feedback-item"><b>Muletillas</b><p>'+f+'</p></div><div class="feedback-item"><b>Argumentación</b><p>Revisa que expliques no solo qué hiciste, sino por qué tomaste cada decisión y qué evidencia respalda tus resultados.</p></div>';$('nextGoal').innerHTML='<div class="tag">RECOMENDACIÓN PRINCIPAL</div><p style="font-size:14px;margin-top:12px">'+(m.fillers>8?'Realiza una práctica enfocada en reducir muletillas.':m.ppm>160?'Practica una exposición más pausada.':'Prepara una explicación más profunda de tu metodología y resultados.')+'</p><button class="btn secondary" onclick="go(\'simulador\')">Practicar preguntas →</button>'}
-
-async function generateQuestions() {
-
-    if (!proyectoId) {
-        toast('Primero registra tu proyecto.');
-        go('proyecto');
-        return;
-    }
-
-    const perfil = $('perfil').value;
-    const dificultad = $('dificultad').value;
-
-    $('questionArea').innerHTML = `
-        <div class="empty">
-            <div class="score">✦</div>
-            <p>El sinodal está analizando tu proyecto...</p>
-            <p class="muted small">
-                Estamos preparando preguntas personalizadas.
-            </p>
-        </div>
-    `;
-
-    $('answerArea').style.display = 'none';
-
-    try {
-
-        const response = await fetch(
-            'api/generar_preguntas.php',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id_proyecto: proyectoId,
-                    perfil: perfil,
-                    dificultad: dificultad
-                })
-            }
-        );
+// document.querySelectorAll('.nav button').forEach(button => {
+//     button.addEventListener('click', () => {
+//         go(button.dataset.page);
+//     });
+// });
 
-        const data = await response.json();
-
-        if (!response.ok || !data.success) {
-            throw new Error(data.message);
-        }
-
-        simulacionId = data.id_simulacion;
-
-        questions = data.preguntas;
-        qIndex = 0;
 
-        $('answerFeedback').innerHTML = `
-            <div class="empty">
-                Tu sinodal está listo.
-                Responde con tus propias palabras.
-            </div>
-        `;
-
-        showQuestion();
-
-        toast('Preguntas generadas correctamente.');
-
-    } catch (error) {
+// /* -------------------------
+//    PROYECTO
+// ------------------------- */
 
-        console.error(error);
-
-        $('questionArea').innerHTML = `
-            <div class="empty">
-                No se pudieron generar las preguntas.
-                <p>${escapeHTML(error.message)}</p>
-                <button class="btn secondary"
-                    onclick="generateQuestions()">
-                    Intentar nuevamente
-                </button>
-            </div>
-        `;
-
-    }
-}
-
-function escapeHTML(value) {
-
-    return String(value).replace(/[&<>"']/g, char => ({
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#039;'
-    })[char]);
-
-}
-
-
-function showQuestion() {
-
-    if (!questions[qIndex]) return;
-
-    const q = questions[qIndex];
-
-    $('qCounter').textContent =
-        `PREGUNTA ${qIndex + 1}`;
-
-    $('questionArea').innerHTML = `
-        <span class="tag">
-            SINODAL ${escapeHTML($('perfil').value.toUpperCase())}
-        </span>
-
-        <div class="question">
-            ${escapeHTML(q.pregunta)}
-        </div>
-
-        <div class="feedback-item">
-            <b>¿Qué busca evaluar?</b>
-            <p>${escapeHTML(q.objetivo || 'Comprensión del proyecto')}</p>
-        </div>
-
-        <div class="feedback-item">
-            <b>Tema</b>
-            <p>${escapeHTML(q.tema || 'Defensa académica')}</p>
-        </div>
-
-        <p class="muted small">
-            Organiza tus ideas y responde como si estuvieras
-            frente a tus sinodales.
-        </p>
-    `;
-
-    $('answerArea').style.display = 'block';
-
-    $('answer').value = '';
-
-}
-
-
-async function evaluateAnswer() {
-
-    const respuesta = $('answer').value.trim();
-
-    if (respuesta.length < 10) {
-        toast('Desarrolla un poco más tu respuesta.');
-        return;
-    }
-
-    if (!simulacionId) {
-        toast('Primero inicia una simulación.');
-        return;
-    }
-
-    const numero = qIndex;
-
-    $('answerFeedback').innerHTML = `
-        <div class="empty">
-            <div class="score">✦</div>
-            <p>Gemini está evaluando tu respuesta...</p>
-        </div>
-    `;
-
-    document.querySelector(
-        '#answerArea button'
-    ).disabled = true;
-
-    try {
-
-        const response = await fetch(
-            'api/evaluar_respuesta.php',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    id_simulacion: simulacionId,
-                    numero_pregunta: numero,
-                    respuesta: respuesta
-                })
-            }
-        );
-
-        const data = await response.json();
-
-        if (!response.ok || !data.success) {
-            throw new Error(data.message);
-        }
-
-        const e = data.evaluacion;
-
-        const lista = elementos =>
-            elementos.map(item =>
-                `<li>${escapeHTML(item)}</li>`
-            ).join('');
-
-        let html = `
-            <div class="score">
-                ${e.puntaje}/100
-            </div>
-
-            <span class="tag">
-                EVALUACIÓN DEL SINODAL
-            </span>
-
-            <div class="feedback-item">
-                <b>Fortalezas</b>
-                <ul>${lista(e.fortalezas)}</ul>
-            </div>
-
-            <div class="feedback-item">
-                <b>Oportunidades de mejora</b>
-                <ul>${lista(e.mejoras)}</ul>
-            </div>
-
-            <div class="feedback-item">
-                <b>Ejemplo de respuesta mejorada</b>
-                <p>${escapeHTML(e.respuesta_sugerida)}</p>
-            </div>
-        `;
-
-        if (qIndex < 4) {
-
-            html += `
-                <div class="feedback-item">
-                    <b>Pregunta de seguimiento</b>
-                    <p>${escapeHTML(e.pregunta_seguimiento)}</p>
-                </div>
-            `;
-
-            if (e.pregunta_seguimiento) {
-                questions.push({
-                    pregunta: e.pregunta_seguimiento,
-                    objetivo: 'Profundizar en tu respuesta anterior',
-                    tema: 'Pregunta de seguimiento'
-                });
-            }
-
-        }
-
-        $('answerFeedback').innerHTML = html;
-
-        if (qIndex < questions.length - 1) {
-
-            $('answerFeedback').innerHTML += `
-                <div class="actions">
-                    <button class="btn primary"
-                        onclick="qIndex++; showQuestion()">
-                        Siguiente pregunta →
-                    </button>
-                </div>
-            `;
-
-        } else {
-
-            $('answerFeedback').innerHTML += `
-                <div class="pill">
-                    Simulación completada
-                </div>
-            `;
-
-        }
-
-        stats.questions++;
-        localStorage.setItem(
-            'defensaStats',
-            JSON.stringify(stats)
-        );
-
-        renderHome();
-
-    } catch (error) {
-
-        console.error(error);
-
-        $('answerFeedback').innerHTML = `
-            <div class="empty">
-                No se pudo evaluar la respuesta.
-                <p>${escapeHTML(error.message)}</p>
-                <button class="btn secondary"
-                    onclick="evaluateAnswer()">
-                    Intentar nuevamente
-                </button>
-            </div>
-        `;
-
-    } finally {
-
-        document.querySelector(
-            '#answerArea button'
-        ).disabled = false;
-
-    }
-}
-
-loadProject();renderHome();renderStats();setDuration();
-</script> -->
+// async function saveProject() {
+
+//     const proyecto = {
+
+//         id_proyecto: proyectoId,
+
+//         nombre_estudiante: $('estudiante').value.trim(),
+//         carrera: $('carrera').value.trim(),
+
+//         titulo: $('titulo').value.trim(),
+//         descripcion: $('descripcion').value.trim(),
+
+//         problematica: $('problematica').value.trim(),
+//         objetivo: $('objetivo').value.trim(),
+//         justificacion: $('justificacion').value.trim(),
+//         metodologia: $('metodologia').value.trim(),
+
+//         tecnologias: $('tecnologias').value.trim(),
+//         resultados: $('resultadosProyecto').value.trim(),
+
+//         duracion: parseInt($('duracion').value, 10),
+//         preocupacion: $('preocupacion').value
+//     };
+
+
+//     if (!proyecto.titulo || !proyecto.descripcion) {
+//         toast('Completa el título y la descripción del proyecto.');
+//         return;
+//     }
+
+
+//     const boton = document.querySelector(
+//         '#page-proyecto .actions button'
+//     );
+
+//     if (boton) {
+//         boton.disabled = true;
+//         boton.textContent = 'Guardando...';
+//     }
+
+
+//     try {
+
+//         const data = await apiRequest('api/guardar_proyecto.php', {
+
+//             method: 'POST',
+
+//             headers: {
+//                 'Content-Type': 'application/json'
+//             },
+
+//             body: JSON.stringify(proyecto)
+
+//         });
+
+
+//         if (!data.id_proyecto) {
+//             throw new Error('El servidor no devolvió el ID del proyecto.');
+//         }
+
+
+//         proyectoId = data.id_proyecto;
+
+//         project = proyecto;
+
+//         localStorage.setItem(
+//             'defensaProyectoId',
+//             proyectoId
+//         );
+
+//         localStorage.setItem(
+//             'defensaProject',
+//             JSON.stringify(project)
+//         );
+
+
+//         toast('Proyecto guardado correctamente.');
+
+//         renderHome();
+
+//         go('inicio');
+
+
+//     } catch (error) {
+
+//         console.error('Error al guardar proyecto:', error);
+
+//         toast(error.message);
+
+//     } finally {
+
+//         if (boton) {
+//             boton.disabled = false;
+//             boton.innerHTML = 'Guardar contexto del proyecto →';
+//         }
+
+//     }
+
+// }
+
+
+// async function loadProject() {
+
+//     if (!proyectoId) {
+//         return;
+//     }
+
+
+//     try {
+
+//         const data = await apiRequest(
+//             `api/obtener_proyecto.php?id=${encodeURIComponent(proyectoId)}`
+//         );
+
+
+//         if (!data.proyecto) {
+//             throw new Error('No se encontró el proyecto.');
+//         }
+
+
+//         const p = data.proyecto;
+
+
+//         $('estudiante').value = p.nombre_estudiante || '';
+//         $('carrera').value = p.carrera || '';
+
+//         $('titulo').value = p.titulo || '';
+//         $('descripcion').value = p.descripcion || '';
+
+//         $('problematica').value = p.problematica || '';
+//         $('objetivo').value = p.objetivo || '';
+//         $('justificacion').value = p.justificacion || '';
+//         $('metodologia').value = p.metodologia || '';
+
+//         $('tecnologias').value = p.tecnologias || '';
+//         $('resultadosProyecto').value = p.resultados || '';
+
+//         $('duracion').value = p.duracion || 5;
+//         $('preocupacion').value = p.preocupacion || 'Quedarme en blanco';
+
+
+//         project = p;
+
+//         localStorage.setItem(
+//             'defensaProject',
+//             JSON.stringify(project)
+//         );
+
+
+//         renderHome();
+
+//     } catch (error) {
+
+//         console.error('Error al recuperar proyecto:', error);
+
+//         toast('No se pudo recuperar el proyecto: ' + error.message);
+
+//     }
+
+// }
+
+
+// function renderHome() {
+
+//     $('statSessions').textContent = stats.sessions || 0;
+//     $('statWords').textContent = stats.words || 0;
+//     $('statQuestions').textContent = stats.questions || 0;
+
+
+//     if (project && project.titulo) {
+
+//         $('welcomeTitle').textContent = project.titulo;
+
+//         $('welcomeDesc').textContent =
+//             'Tu asesor ya tiene el contexto de tu proyecto. Practica tu exposición o responde preguntas personalizadas.';
+
+//     }
+
+// }
+
+
+// /* -------------------------
+//    TEMPORIZADOR
+// ------------------------- */
+
+// function setDuration() {
+
+//     if (running) {
+//         return;
+//     }
+
+//     total = parseInt($('timerSelect').value, 10) * 60;
+
+//     remaining = total;
+
+//     updateTimer();
+
+// }
+
+
+// function updateTimer() {
+
+//     const minutes = Math.floor(remaining / 60);
+//     const seconds = remaining % 60;
+
+//     $('timer').textContent =
+//         String(minutes).padStart(2, '0') +
+//         ':' +
+//         String(seconds).padStart(2, '0');
+
+// }
+
+
+// /* -------------------------
+//    RECONOCIMIENTO DE VOZ
+// ------------------------- */
+
+// function startPractice() {
+
+//     if (running) {
+//         return;
+//     }
+
+
+//     transcript = '';
+
+//     $('transcript').textContent = '';
+
+//     $('manualTranscript').value = '';
+
+//     $('liveWords').textContent = '0';
+
+//     $('liveFillers').textContent = '0';
+
+//     $('fillerList').textContent = 'Escuchando...';
+
+
+//     remaining = parseInt($('timerSelect').value, 10) * 60;
+
+//     total = remaining;
+
+//     startedAt = Date.now();
+
+//     running = true;
+
+
+//     $('startBtn').disabled = true;
+
+//     $('stopBtn').disabled = false;
+
+//     $('recDot').classList.add('live');
+
+//     $('timerState').textContent = 'EXPOSICIÓN EN CURSO';
+
+//     $('speechStatus').textContent = 'GRABANDO';
+
+//     $('transcriptState').textContent = 'Reconociendo voz...';
+
+
+//     updateTimer();
+
+
+//     const SpeechRecognition =
+//         window.SpeechRecognition ||
+//         window.webkitSpeechRecognition;
+
+
+//     if (SpeechRecognition) {
+
+//         recognition = new SpeechRecognition();
+
+//         recognition.lang = 'es-MX';
+
+//         recognition.continuous = true;
+
+//         recognition.interimResults = true;
+
+
+//         recognition.onresult = function (event) {
+
+//             let finalText = '';
+//             let interimText = '';
+
+
+//             for (
+//                 let i = event.resultIndex;
+//                 i < event.results.length;
+//                 i++
+//             ) {
+
+//                 const result = event.results[i];
+
+//                 if (result.isFinal) {
+
+//                     finalText += result[0].transcript + ' ';
+
+//                 } else {
+
+//                     interimText += result[0].transcript;
+
+//                 }
+
+//             }
+
+
+//             if (finalText) {
+//                 transcript += finalText;
+//             }
+
+
+//             $('transcript').textContent =
+//                 transcript + interimText;
+
+
+//             updateLive(transcript + interimText);
+
+//         };
+
+
+//         recognition.onerror = function (event) {
+
+//             console.error('Error de reconocimiento:', event.error);
+
+//             $('micHint').textContent =
+//                 'No se pudo reconocer la voz (' +
+//                 event.error +
+//                 '). Puedes pegar tu transcripción manualmente.';
+
+//         };
+
+
+//         recognition.onend = function () {
+
+//             if (running && recognition) {
+
+//                 try {
+//                     recognition.start();
+//                 } catch (error) {
+//                     console.warn('No se pudo reiniciar el reconocimiento:', error);
+//                 }
+
+//             }
+
+//         };
+
+
+//         try {
+
+//             recognition.start();
+
+//             $('micHint').textContent =
+//                 'Micrófono activo. Habla con naturalidad.';
+
+//         } catch (error) {
+
+//             console.error(error);
+
+//             $('micHint').textContent =
+//                 'No se pudo iniciar el reconocimiento. Usa la transcripción manual.';
+
+//         }
+
+//     } else {
+
+//         $('micHint').textContent =
+//             'Tu navegador no soporta reconocimiento de voz. Puedes pegar tu transcripción manualmente.';
+
+//     }
+
+
+//     ticker = setInterval(function () {
+
+//         if (remaining > 0) {
+
+//             remaining--;
+
+//             updateTimer();
+
+//         } else {
+
+//             stopPractice(true);
+
+//         }
+
+//     }, 1000);
+
+// }
+
+
+// function stopPractice(auto = false) {
+
+//     if (!running) {
+//         return;
+//     }
+
+
+//     running = false;
+
+//     clearInterval(ticker);
+
+//     ticker = null;
+
+
+//     if (recognition) {
+
+//         recognition.onend = null;
+
+//         try {
+//             recognition.stop();
+//         } catch (error) {
+//             console.warn(error);
+//         }
+
+//         recognition = null;
+
+//     }
+
+
+//     $('startBtn').disabled = false;
+
+//     $('stopBtn').disabled = true;
+
+//     $('recDot').classList.remove('live');
+
+
+//     $('timerState').textContent =
+//         auto ? 'TIEMPO AGOTADO' : 'PRÁCTICA FINALIZADA';
+
+//     $('speechStatus').textContent = 'PRÁCTICA TERMINADA';
+
+//     $('transcriptState').textContent = 'Transcripción finalizada';
+
+
+//     if (auto) {
+//         toast('Se agotó el tiempo. Tu exposición terminó automáticamente.');
+//     }
+
+
+//     const minutes = Math.max(
+//         0.01,
+//         (Date.now() - startedAt) / 60000
+//     );
+
+
+//     analyzeText(transcript, minutes);
+
+// }
+
+
+// /* -------------------------
+//    ANÁLISIS DE TRANSCRIPCIÓN
+// ------------------------- */
+
+// function updateLive(text) {
+
+//     const words = text.trim()
+//         ? text.trim().split(/\s+/).length
+//         : 0;
+
+//     const count = countFillers(text);
+
+//     $('liveWords').textContent = words;
+
+//     $('liveFillers').textContent = count;
+
+
+//     $('fillerList').textContent = count
+//         ? count + ' expresiones detectadas: ' + findFillers(text).join(', ')
+//         : 'No se detectan muletillas frecuentes.';
+
+// }
+
+
+// function countFillers(text) {
+
+//     return findFillers(text).reduce((total, item) => {
+//         return total + item.n;
+//     }, 0);
+
+// }
+
+
+// function findFillers(text) {
+
+//     const lower = text.toLowerCase();
+
+//     return fillers
+//         .map(word => {
+
+//             const escaped = word.replace(
+//                 /[.*+?^${}()|[\]\\]/g,
+//                 '\\$&'
+//             );
+
+//             const matches = lower.match(
+//                 new RegExp(escaped, 'g')
+//             ) || [];
+
+//             return {
+//                 word: word,
+//                 n: matches.length
+//             };
+
+//         })
+//         .filter(item => item.n > 0)
+//         .map(item => item.word + ' (' + item.n + ')');
+
+// }
+
+
+// function analyzeManual() {
+
+//     const text = $('manualTranscript').value.trim();
+
+//     if (!text) {
+//         toast('Pega primero una transcripción.');
+//         return;
+//     }
+
+
+//     const minutes = parseInt($('timerSelect').value, 10);
+
+//     analyzeText(text, minutes);
+
+// }
+
+
+// function analyzeText(text, minutes) {
+
+//     if (!text || !text.trim()) {
+
+//         toast('No hay transcripción para analizar.');
+
+//         return;
+
+//     }
+
+
+//     const words = text.trim().split(/\s+/).length;
+
+//     const fillersCount = countFillers(text);
+
+//     const ppm = Math.round(words / Math.max(minutes, 0.1));
+
+//     const pauses = Math.max(
+//         0,
+//         Math.round(text.split(/[.!?]/).length * 0.35)
+//     );
+
+
+//     currentMetrics = {
+
+//         words: words,
+
+//         fillers: fillersCount,
+
+//         ppm: ppm,
+
+//         minutes: minutes,
+
+//         pauses: pauses,
+
+//         text: text
+
+//     };
+
+
+//     stats.sessions = (stats.sessions || 0) + 1;
+
+//     stats.words = (stats.words || 0) + words;
+
+
+//     localStorage.setItem(
+//         'defensaStats',
+//         JSON.stringify(stats)
+//     );
+
+//     localStorage.setItem(
+//         'defensaLast',
+//         JSON.stringify(currentMetrics)
+//     );
+
+
+//     renderStats();
+
+//     toast('Análisis de exposición listo.');
+
+//     go('resultados');
+
+// }
+
+
+// /* -------------------------
+//    RESULTADOS
+// ------------------------- */
+
+// function renderStats() {
+
+//     let metrics = currentMetrics;
+
+
+//     if (!metrics) {
+
+//         try {
+
+//             metrics = JSON.parse(
+//                 localStorage.getItem('defensaLast') || 'null'
+//             );
+
+//         } catch (error) {
+
+//             metrics = null;
+
+//         }
+
+//     }
+
+
+//     if (!metrics) {
+//         return;
+//     }
+
+
+//     $('resPpm').textContent = metrics.ppm;
+
+//     $('resFillers').textContent = metrics.fillers;
+
+//     $('resDuration').textContent =
+//         Number(metrics.minutes).toFixed(1) + ' min';
+
+
+//     const clarity = metrics.words > 80
+
+//         ? 'Desarrollaste suficiente contenido para revisar la estructura de tus ideas.'
+
+//         : 'Tu exposición fue breve. Intenta ampliar la explicación de tu problemática y tus resultados.';
+
+
+//     const pace = metrics.ppm > 160
+
+//         ? 'Tu ritmo parece acelerado. Prueba hacer pausas al cambiar de idea.'
+
+//         : metrics.ppm < 90
+
+//             ? 'Tu ritmo parece lento. Practica mantener continuidad sin apresurarte.'
+
+//             : 'Tu velocidad está dentro de un rango orientativo cómodo.';
+
+
+//     const fillerFeedback = metrics.fillers > 8
+
+//         ? 'Se repiten varias muletillas. Sustitúyelas por pausas conscientes.'
+
+//         : 'El uso de muletillas fue moderado. Sigue prestando atención a las expresiones repetitivas.';
+
+
+//     $('diagnosis').innerHTML = `
+
+//         <div class="feedback-item">
+//             <b>Claridad y desarrollo</b>
+//             <p>${clarity}</p>
+//         </div>
+
+//         <div class="feedback-item">
+//             <b>Ritmo de habla</b>
+//             <p>${pace}</p>
+//         </div>
+
+//         <div class="feedback-item">
+//             <b>Muletillas</b>
+//             <p>${fillerFeedback}</p>
+//         </div>
+
+//         <div class="feedback-item">
+//             <b>Argumentación</b>
+//             <p>
+//                 Revisa que expliques no solo qué hiciste,
+//                 sino por qué tomaste cada decisión y qué
+//                 evidencia respalda tus resultados.
+//             </p>
+//         </div>
+
+//     `;
+
+
+//     let recommendation = 'Prepara una explicación más profunda de tu metodología y resultados.';
+
+//     if (metrics.fillers > 8) {
+
+//         recommendation = 'Realiza una práctica enfocada en reducir muletillas.';
+
+//     } else if (metrics.ppm > 160) {
+
+//         recommendation = 'Practica una exposición más pausada.';
+
+//     }
+
+
+//     $('nextGoal').innerHTML = `
+
+//         <div class="tag">RECOMENDACIÓN PRINCIPAL</div>
+
+//         <p style="font-size:14px;margin-top:12px">
+//             ${recommendation}
+//         </p>
+
+//         <button class="btn secondary" onclick="go('simulador')">
+//             Practicar preguntas →
+//         </button>
+
+//     `;
+
+// }
+
+
+// /* -------------------------
+//    GENERAR PREGUNTAS
+// ------------------------- */
+
+// async function generateQuestions() {
+
+//     if (!proyectoId) {
+
+//         toast('Primero registra tu proyecto.');
+
+//         go('proyecto');
+
+//         return;
+
+//     }
+
+
+//     const perfil = $('perfil').value;
+
+//     const dificultad = $('dificultad').value;
+
+
+//     const boton = document.querySelector(
+//         '#page-simulador .actions button'
+//     );
+
+//     if (boton) {
+//         boton.disabled = true;
+//         boton.textContent = 'Generando preguntas...';
+//     }
+
+
+//     $('questionArea').innerHTML = `
+
+//         <div class="empty">
+
+//             <div class="score">✦</div>
+
+//             <p>El sinodal está analizando tu proyecto...</p>
+
+//             <p class="muted small">
+//                 Estamos preparando preguntas personalizadas.
+//             </p>
+
+//         </div>
+
+//     `;
+
+
+//     $('answerArea').style.display = 'none';
+
+//     $('answerFeedback').innerHTML = `
+//         <div class="empty">Preparando la simulación...</div>
+//     `;
+
+
+//     try {
+
+//         const data = await apiRequest(
+//             'api/generar_preguntas.php',
+//             {
+
+//                 method: 'POST',
+
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+
+//                 body: JSON.stringify({
+
+//                     id_proyecto: proyectoId,
+
+//                     perfil: perfil,
+
+//                     dificultad: dificultad
+
+//                 })
+
+//             }
+//         );
+
+
+//         if (!data.id_simulacion) {
+//             throw new Error('No se recibió el ID de la simulación.');
+//         }
+
+//         if (!Array.isArray(data.preguntas) || data.preguntas.length === 0) {
+//             throw new Error('La IA no devolvió preguntas.');
+//         }
+
+
+//         simulacionId = data.id_simulacion;
+
+//         questions = data.preguntas;
+
+//         qIndex = 0;
+
+
+//         $('answerFeedback').innerHTML = `
+
+//             <div class="empty">
+//                 Tu sinodal está listo.
+//                 Responde con tus propias palabras.
+//             </div>
+
+//         `;
+
+
+//         showQuestion();
+
+//         toast('Preguntas generadas correctamente.');
+
+
+//     } catch (error) {
+
+//         console.error('Error al generar preguntas:', error);
+
+
+//         $('questionArea').innerHTML = `
+
+//             <div class="empty">
+
+//                 No se pudieron generar las preguntas.
+
+//                 <p>${escapeHTML(error.message)}</p>
+
+//                 <button class="btn secondary" onclick="generateQuestions()">
+//                     Intentar nuevamente
+//                 </button>
+
+//             </div>
+
+//         `;
+
+//     } finally {
+
+//         if (boton) {
+//             boton.disabled = false;
+//             boton.textContent = 'Generar preguntas personalizadas ✦';
+//         }
+
+//     }
+
+// }
+
+
+// /* -------------------------
+//    MOSTRAR PREGUNTA
+// ------------------------- */
+
+// function showQuestion() {
+
+//     const question = questions[qIndex];
+
+
+//     if (!question) {
+
+//         $('questionArea').innerHTML = `
+//             <div class="empty">
+//                 No hay más preguntas disponibles.
+//             </div>
+//         `;
+
+//         $('answerArea').style.display = 'none';
+
+//         $('qCounter').textContent = 'FINALIZADO';
+
+//         return;
+
+//     }
+
+
+//     $('qCounter').textContent =
+//         `PREGUNTA ${qIndex + 1}`;
+
+
+//     $('questionArea').innerHTML = `
+
+//         <span class="tag">
+//             SINODAL ${escapeHTML($('perfil').value.toUpperCase())}
+//         </span>
+
+//         <div class="question">
+//             ${escapeHTML(question.pregunta)}
+//         </div>
+
+//         <div class="feedback-item">
+
+//             <b>¿Qué busca evaluar?</b>
+
+//             <p>
+//                 ${escapeHTML(
+//                     question.objetivo || 'Comprensión del proyecto'
+//                 )}
+//             </p>
+
+//         </div>
+
+//         <div class="feedback-item">
+
+//             <b>Tema</b>
+
+//             <p>
+//                 ${escapeHTML(
+//                     question.tema || 'Defensa académica'
+//                 )}
+//             </p>
+
+//         </div>
+
+//         <p class="muted small">
+//             Organiza tus ideas y responde como si estuvieras
+//             frente a tus sinodales.
+//         </p>
+
+//     `;
+
+
+//     $('answerArea').style.display = 'block';
+
+//     $('answer').value = '';
+
+//     $('answer').focus();
+
+// }
+
+
+// /* -------------------------
+//    EVALUAR RESPUESTA
+// ------------------------- */
+
+// async function evaluateAnswer() {
+
+//     const respuesta = $('answer').value.trim();
+
+
+//     if (respuesta.length < 10) {
+
+//         toast('Desarrolla un poco más tu respuesta.');
+
+//         return;
+
+//     }
+
+
+//     if (!simulacionId) {
+
+//         toast('Primero inicia una simulación.');
+
+//         return;
+
+//     }
+
+
+//     const numero = qIndex;
+
+
+//     const boton = document.querySelector(
+//         '#answerArea .actions button'
+//     );
+
+
+//     if (boton) {
+//         boton.disabled = true;
+//         boton.textContent = 'Evaluando...';
+//     }
+
+
+//     $('answerFeedback').innerHTML = `
+
+//         <div class="empty">
+
+//             <div class="score">✦</div>
+
+//             <p>Gemini está evaluando tu respuesta...</p>
+
+//             <p class="muted small">
+//                 Analizando claridad, pertinencia y argumentación.
+//             </p>
+
+//         </div>
+
+//     `;
+
+
+//     try {
+
+//         const data = await apiRequest(
+//             'api/evaluar_respuesta.php',
+//             {
+
+//                 method: 'POST',
+
+//                 headers: {
+//                     'Content-Type': 'application/json'
+//                 },
+
+//                 body: JSON.stringify({
+
+//                     id_simulacion: simulacionId,
+
+//                     numero_pregunta: numero,
+
+//                     respuesta: respuesta
+
+//                 })
+
+//             }
+//         );
+
+
+//         const evaluation = data.evaluacion;
+
+
+//         if (!evaluation) {
+//             throw new Error('No se recibió la evaluación de Gemini.');
+//         }
+
+
+//         const strengths = Array.isArray(evaluation.fortalezas)
+//             ? evaluation.fortalezas
+//             : [];
+
+//         const improvements = Array.isArray(evaluation.mejoras)
+//             ? evaluation.mejoras
+//             : [];
+
+
+//         const listHTML = items => {
+
+//             if (items.length === 0) {
+//                 return '<li>No se proporcionaron observaciones.</li>';
+//             }
+
+//             return items.map(item => {
+//                 return `<li>${escapeHTML(item)}</li>`;
+//             }).join('');
+
+//         };
+
+
+//         const score = Number(evaluation.puntaje) || 0;
+
+//         const followUp = String(
+//             evaluation.pregunta_seguimiento || ''
+//         ).trim();
+
+
+//         let html = `
+
+//             <div class="score">
+//                 ${score}/100
+//             </div>
+
+//             <span class="tag">
+//                 EVALUACIÓN DEL SINODAL
+//             </span>
+
+//             <div class="feedback-item">
+
+//                 <b>Fortalezas</b>
+
+//                 <ul>
+//                     ${listHTML(strengths)}
+//                 </ul>
+
+//             </div>
+
+//             <div class="feedback-item">
+
+//                 <b>Oportunidades de mejora</b>
+
+//                 <ul>
+//                     ${listHTML(improvements)}
+//                 </ul>
+
+//             </div>
+
+//             <div class="feedback-item">
+
+//                 <b>Ejemplo de respuesta mejorada</b>
+
+//                 <p>
+//                     ${escapeHTML(
+//                         evaluation.respuesta_sugerida ||
+//                         'No se generó una respuesta sugerida.'
+//                     )}
+//                 </p>
+
+//             </div>
+
+//         `;
+
+
+//         /*
+//          * Las preguntas de seguimiento se agregan
+//          * después de las preguntas originales.
+//          *
+//          * Se permite un seguimiento por cada pregunta
+//          * original, hasta un máximo de 10 preguntas.
+//          */
+
+//         if (followUp && numero < 5 && questions.length < 10) {
+
+//             html += `
+
+//                 <div class="feedback-item">
+
+//                     <b>Pregunta de seguimiento</b>
+
+//                     <p>${escapeHTML(followUp)}</p>
+
+//                 </div>
+
+//             `;
+
+
+//             questions.push({
+
+//                 pregunta: followUp,
+
+//                 objetivo: 'Profundizar en tu respuesta anterior',
+
+//                 tema: 'Pregunta de seguimiento'
+
+//             });
+
+//         }
+
+
+//         $('answerFeedback').innerHTML = html;
+
+
+//         if (qIndex < questions.length - 1) {
+
+//             $('answerFeedback').innerHTML += `
+
+//                 <div class="actions">
+
+//                     <button class="btn primary"
+//                         onclick="nextQuestion()">
+
+//                         Siguiente pregunta →
+
+//                     </button>
+
+//                 </div>
+
+//             `;
+
+//         } else {
+
+//             $('answerFeedback').innerHTML += `
+
+//                 <div class="pill">
+//                     Simulación completada
+//                 </div>
+
+//             `;
+
+//         }
+
+
+//         stats.questions = (stats.questions || 0) + 1;
+
+
+//         localStorage.setItem(
+//             'defensaStats',
+//             JSON.stringify(stats)
+//         );
+
+
+//         renderHome();
+
+
+//     } catch (error) {
+
+//         console.error('Error al evaluar respuesta:', error);
+
+
+//         $('answerFeedback').innerHTML = `
+
+//             <div class="empty">
+
+//                 No se pudo evaluar la respuesta.
+
+//                 <p>${escapeHTML(error.message)}</p>
+
+//                 <button class="btn secondary"
+//                     onclick="evaluateAnswer()">
+
+//                     Intentar nuevamente
+
+//                 </button>
+
+//             </div>
+
+//         `;
+
+//     } finally {
+
+//         if (boton) {
+//             boton.disabled = false;
+//             boton.textContent = 'Evaluar mi respuesta';
+//         }
+
+//     }
+
+// }
+
+
+// /* -------------------------
+//    SIGUIENTE PREGUNTA
+// ------------------------- */
+
+// function nextQuestion() {
+
+//     if (qIndex < questions.length - 1) {
+
+//         qIndex++;
+
+//         showQuestion();
+
+//     } else {
+
+//         $('answerArea').style.display = 'none';
+
+//         $('qCounter').textContent = 'FINALIZADO';
+
+//         $('questionArea').innerHTML = `
+
+//             <div class="empty">
+
+//                 <div class="score">✓</div>
+
+//                 <h3>¡Simulación completada!</h3>
+
+//                 <p>
+//                     Has terminado las preguntas de esta sesión.
+//                     Sigue practicando para fortalecer tu defensa.
+//                 </p>
+
+//             </div>
+
+//         `;
+
+//     }
+
+// }
+
+
+// /* -------------------------
+//    INICIALIZACIÓN
+// ------------------------- */
+
+// document.addEventListener('DOMContentLoaded', function () {
+
+//     try {
+
+//         loadProject();
+
+//         renderHome();
+
+//         renderStats();
+
+//         setDuration();
+
+//     } catch (error) {
+
+//         console.error('Error al iniciar Tell Me More:', error);
+
+//         toast('Ocurrió un error al iniciar la aplicación.');
+
+//     }
+
+// });
+
+// </script>
+
 </body></html>
